@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #110b0b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+main div img[alt=main_img]{
+    width: 200px;
+}
+
+main>div:nth-child(2){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_bar{
+    width: 58%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2d2f30;
+    margin-top: 30px;
+    padding: 10px;
+    border-color: transparent;
+    border-radius: 25px;
+}
+
+input{
+    padding: 8px 0px;
+    font-size: 16px;
+    outline: 0px;
+    border: 0px;
+    background-color: transparent;
+    color: #9fa0a1;
+    width: 80%;
+    text-transform: capitalize;
+}
+
+.search_bar div img{
+    width: 100px;
+    height: 100%;
+}
+
+.search_bar>div{
+    background-color: #ffeb00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.results{
+    flex-direction: column;
+    width: 58%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius:25px;
+    display: none;
+    background: #2d2f30;
+    overflow: hidden;
+    padding-bottom: 15px;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: #9fa0a1;
+    padding: 10px 15px;
+}
+
+.box div{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box:hover{
+    background-color: #ffeb00;
+    color: black;
+    animation: anim 0.8s ease;
+}
+
+@keyframes anim{
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#border_radius{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+p{
+    text-transform: capitalize;
+    font-size: 14px;
+    margin: 5px;
+}
+
+hr{
+    width: 97%;
+    border: 0.2px solid #110b0b;
+}

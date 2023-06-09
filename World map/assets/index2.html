@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phooto Album</title>
+    <style>
+        #album {
+            display: grid;
+            padding: 5%;
+            grid-template-columns: repeat(4,20%);
+            gap: 5%;
+        }
+
+        img{
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Photo Album</h1>
+    <input type="text" id="url">
+    <button onclick="addimg()">Add Img</button>
+    <div id="album"></div>
+</body>
+</html>
+
+<script>
+    let albumdiv = document.getElementById("album");
+    function addimg(){
+        let url = document.getElementById("url").value;
+        if(url == ""){
+            document.getElementById("url").placeholder = "Please Enter an URL";
+        }
+        else{
+            let img = document.createElement("img");
+            img.setAttribute("src", url);
+            img.setAttribute("alt","Your Img");
+            albumdiv.append(img);
+            document.getElementById("url").value = "";
+            document.getElementById("url").placeholder = "";
+        }
+    }
+
+</script>

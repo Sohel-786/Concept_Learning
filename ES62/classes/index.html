@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    class stack{
+        constructor(name){
+            this.book_stack = [];
+            this.length = 0;
+        }
+
+        in(...b){
+            b.forEach(el =>{ 
+                this.book_stack.push(el);
+                this.length++;
+            }) 
+        }
+
+        out(){
+            this.book_stack.pop();
+            this.length--;
+        }
+
+        show_last(){
+            console.log(this.book_stack[this.length-1]);
+        }
+
+    }
+
+    var x = new stack('sohel');
+    x.in('Game of throne','gray','Poppy');
+    x.show_last();
+</script>

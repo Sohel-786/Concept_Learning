@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');    
+
+        body{
+            font-family: 'Oswald', sans-serif;
+        }
+
+        main{
+            width: 100%;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main div:nth-child(1) input{
+            padding: 10px;
+            font-size: 16px;
+            margin: 20px;
+            outline: 1px solid rgb(0, 0, 0);
+            border-radius: 15px;
+        }
+
+        input{
+            width: 40%;
+            padding: 5px;
+            outline: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        hr{
+            border: 1.2px solid rgb(12, 151, 178);
+            width: 40%;
+        }
+
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #088fb4;
+            color: white;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            color: #088fb4;
+            background-color: white;
+            border-color: white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        button:active{
+            background-color: #0000008d;
+            color: white;
+        }
+
+        main #result h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #2784be;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        header{
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            
+        }
+
+        header div{
+            width: 42%;
+        }
+
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img{
+            width: 50px;
+        }
+
+        main div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main div img{
+            width: 30px;
+            cursor: pointer;
+            padding: 3px;
+            border-radius: 50%;
+        }
+
+        main div img:hover{
+            background-color: #ececec;
+            transition: background-color 0.6s ease;
+        }
+
+        main div img:active{
+            border: 1px solid gray;
+        }
+
+        datalist{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="/Google_translate/assets/Translate.avif" alt="google_translate">
+        </div>  
+        <h1>Google Translate</h1>
+
+    </header>
+    <main>
+
+        <div>
+            <input list="from" placeholder="Select From" id="From">
+            <datalist id="from">
+                
+            </datalist>
+            <img src="/Google_translate/assets/swap.png" alt="swap" onclick="swap_value()">
+            <input type="text" list="to" placeholder="Select To" id="To">
+            <datalist id="to">
+                
+            </datalist>
+        </div>
+        <input type="text" id="lang" placeholder="Enter your text">
+        <hr>
+        <br>
+       
+        <button onclick="results()">Show</button>
+        <div id="result">
+
+        </div>
+    </main>
+    
+</body>
+</html>
+
+<script src="/Google_translate/srcipt.js"></script> 
+<script src="/Google_translate/script2.js"></script>

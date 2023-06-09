@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Take Your Notes</h1>
+        <div>
+            <img src="/assets/penlogo.jpg" alt="Pen">
+        </div>
+    </header>
+    <main>
+        <!-- Here The both buttons are defined -->
+        <div class="btn">
+            <button onclick="shownotewritter()">Take Notes</button>
+            <button onclick="shownotes()">My Notes</button>
+        </div>
+
+        <!-- Here the whole Note Writting section is defined -->
+        <div id="fake" class="note-writter">
+
+            <div class="day-select"><label for="number">Day</label><input type="number" placeholder="Enter Your Day here" id="number">
+            </div>
+
+            <div class="note-box">
+                <textarea id="note" cols="40" rows="10" placeholder="Take Your Note Here" onkeypress="on_keypress(event)"></textarea>
+                <div>
+                    <button onclick="savenote()">Save</button><button onclick="clearnote()">Clear</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- From here the note showing section will start  -->
+
+        <div class="see-notes" id="fake">
+                <div class="day-select">
+                    <label for="no">Day</label><input type="number" placeholder="Enter Your Day here" id="no">
+                     <button onclick="presentnote()">Show</button>
+                 </div>
+
+            <div class="note-presenter">
+                <h1 class="close">X</h1>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
+
+<script src="script.js">
+</script>

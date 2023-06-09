@@ -1,0 +1,1 @@
+let x  = (10>5) ? "x is grater than five";

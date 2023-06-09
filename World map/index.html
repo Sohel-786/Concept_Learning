@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Map</title>
+    <style>
+        #World {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap:100px;
+            padding: 30px;
+        }
+
+        #country{
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>World Map Guide</h1>
+    <div id="World">
+        <div id="country">India</div>
+        <div id="country">Us</div>
+        <div id="country">Brazil</div>
+        <div id="country">China</div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function addlistner(){
+        let cou = document.querySelectorAll("#country");
+        for(let i =0 ;i<cou.length;i++){
+            cou[i].addEventListener("mouseover", function(){
+                alert(`I am Hovering over the ${cou[i].innerHTML}`);
+            })
+        }
+    }
+    addlistner();
+</script>

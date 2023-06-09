@@ -1,0 +1,283 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.372);
+    width: 100%;
+}
+
+header {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-size: 100% 100%;
+    width: 100%;
+    background-position: center;
+    border-radius: 0px 0px 20px 20px;
+    background-image: url("/assets/BGI/wallpaperflare.com_wallpaper\ \(9\).jpg");
+    animation: bgichange 60s ease 5s infinite;
+}
+
+header h1 {
+    color: #d9ff00;
+    font-size: 50px;
+}
+
+header div img {
+    width: 100px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+main .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+}
+
+.btn button {
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn button:hover {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+}
+
+.btn button:active {
+    background-color: #0000008a;
+    color: #95ff00;
+    font-size: 13px;
+}
+
+.day-select {
+    display: flex;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: white;
+    align-items: center;
+    width: fit-content;
+}
+
+.day-select:hover {
+    border: 2px solid black;
+}
+
+label:hover {
+        cursor: pointer;
+        font-weight: 550;
+}
+
+input {
+    padding: 6px 15px;
+    border: none;
+    font-weight: 600;
+}
+
+input:focus{
+    outline: none;
+}
+
+.note-writter {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    gap: 10px;
+}
+
+.note-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.note-box button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 2px solid transparent; 
+    background-color: #0048ff;
+    color: white;
+    font-weight: 600;
+}
+
+.note-box button:hover{
+    color: #0048ff;
+    background-color: white;
+    border-color: black;
+    cursor: pointer;
+}
+
+.note-box button:active {
+    font-size: 14px;
+}
+
+.note-box div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+}
+
+textarea {
+    resize: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+textarea:focus {
+    border-color: #95ff00;
+    box-shadow: 0 0 20px #719ECE;
+    outline: none;
+}
+
+#show{
+    display: flex;
+}
+
+.see-notes {
+    margin-top: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.see-notes .day-select button{
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    background-color: #006eff;
+    color: white;
+    border-radius: 5px;
+    font-weight: 550;
+}
+
+.see-notes .day-select {
+    padding: 5px;
+}
+
+.see-notes .day-select button:hover{
+    border-color: #006eff;
+    cursor: pointer;
+    background-color: white;
+    color: #006eff;
+}
+
+.see-notes .day-select button:active{
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    border-color: black;
+}
+
+.note-presenter {
+    width: 400px;
+    height: 210px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: scroll;
+    
+}
+
+.note-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+}
+
+.close {
+    position: absolute;
+    left: 383px;
+    bottom: 115px;
+    color: red;
+    padding: 3px 5px;
+    font-size: 22px;
+}
+
+.close:hover {
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+@keyframes bgichange {
+    0%{
+        background-image: url("/assets/BGI/wallpaperflare.com_wallpaper\ \(9\).jpg");
+    }
+
+    10%{
+        background-image: url("/assets/BGI/pexels-flo-maderebner-869258.jpg");
+    }
+
+    20%{
+        background-image: url("/assets/BGI/pexels-francesco-ungaro-464311.jpg");
+    }
+
+    30%{
+        background-image: url("/assets/BGI/wallpaperflare.com_wallpaper\ \(8\).jpg");
+    }
+
+    40%{
+        background-image: url("/assets/BGI/pexels-kellie-churchman-1001682.jpg");
+    }
+
+    50%{
+        background-image: url("/assets/BGI/pexels-pixabay-206359.jpg");
+    }
+
+    60%{
+        background-image: url("/assets/BGI/pexels-pixabay-37403.jpg");
+    }
+
+    70%{
+        background-image: url("/assets/BGI/wallpaperflare.com_wallpaper\ \(2\).jpg");
+    }
+
+    80%{
+        background-image: url("/assets/BGI/wallpaperflare.com_wallpaper\ \(3\).jpg");
+    }
+
+    90%{
+        background-image: url("/assets/BGI/wallpaperflare.com_wallpaper\ \(4\).jpg");
+    }
+
+    100%{
+        background-image: url("/assets/BGI/wallpaperflare.com_wallpaper\ \(6\).jpg");
+    }
+}

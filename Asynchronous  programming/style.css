@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    padding: 30px;
+    background-color: #344dee;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+main .img_slide{
+    height: 400px;
+    margin: 20px 0px;
+}
+
+main form{
+    width: 50%;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+main form input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+main h1{
+    margin: 15px;
+}
+
+main button{
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 15px;
+    background-color: #33ff00;
+    cursor: pointer;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.img_slide{
+    width: 100%;
+    height: 400px;
+    border: 1px solid black;
+}
+
+.slide_image{
+    width: 100%;
+    height: 100%;
+}
+
+.students{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    gap: 10px;
+    text-align: center;
+}
+
+
+#std_img{
+    width: 100%;
+    height: 60%;
+}

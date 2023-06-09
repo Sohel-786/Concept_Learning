@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Auth</title>
+    <link rel="stylesheet" href="/Masai_auth/style.css">
+</head>
+<body>
+    <header>
+        <h1>Masai Auth System</h1>
+    </header>
+
+    <main>
+        <div id="register">
+            <h1>Resgister</h1>
+            <form onsubmit="register()" id="register_form">
+                <input type="text" placeholder="Enter your name" id="name"><hr><br>
+                <input type="email" placeholder="Enter your email" id="email"><hr><br>
+                <input type="number" placeholder="Enter your mobile number" id="mobile"><hr><br>
+                <input type="password" placeholder="Create a Password" id="pass"><hr><br>
+                <input type="text" placeholder="Choose a username" id="username"><hr><br>
+                <input type="text" placeholder="About you" id="des"><hr><br>
+                <input type="submit" value="Sign up">
+            </form>
+        </div>
+    
+    
+        <div id="login">
+            <h1>Login</h1>
+            <form onsubmit="login()"> 
+                <input type="text" placeholder="Enter your email or phone number or Username" id="authorization"><hr><br>
+                <input type="password" placeholder="Enter your password" id="auth_password"><hr><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>
+
+<script src="/Masai_auth/script.js"></script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Api</title>
+    <style>
+        #videos{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0px;
+        }
+
+        #videos div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid pink;
+        }
+
+        #main{
+            padding: 15px;
+        }
+
+        .heading:hover{
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter What you want</h1>
+    <input type="text" placeholder="Search" id="name">
+    <button onclick="show()">Search</button>
+    <br>
+    <div id="main"></div>
+    <div id="videos"></div>
+</body>
+</html>
+
+<script src="/second/script.js"></script>

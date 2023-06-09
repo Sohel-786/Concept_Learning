@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatkaal alert system</title>
+</head>
+<body>
+        <h1>Tatkaal alert system</h1>
+        <Button onclick="Notify()">Notify</Button>
+</body>
+</html>
+
+<script>
+
+    let mtog = ["sohel", "abdul", "jubair", "aasim", "messi", "salman", "sharukh", "ajay", "Ashu", "Jesica", "Romeo", "juliet"];
+
+    let btog = ["sohel", "abdul", "jubair", "aasim", "messi", "salman", "sharukh", "ajay", "Ashu", "Jesica", "Romeo", "juliet"];
+
+    let ptog = ["sohel", "abdul", "jubair", "aasim", "messi", "salman", "sharukh", "ajay", "Ashu", "Jesica", "Romeo", "juliet"];
+
+    async function Notify(){
+
+        let promise = new Promise((resolve, reject) =>{
+                setInterval(()=>{
+                    if(mtog.length < 5){
+                        clearInterval(interval);
+                        resolve("Train 1 is available");
+                        
+
+                    }else if(btog.length <5){
+                        clearInterval(interval);
+                        resolve("Train 2 is available");
+                        
+
+                    }else if(ptog.length <5){
+                        clearInterval(interval);
+                        resolve("Train 3 is available");
+        
+                    }
+                }, 1000);
+        });
+
+        let res = await promise;
+        alert(res);
+    };
+
+    function ticketcancle(){
+
+        let cancelationtime1 = (Math.ceil(Math.random() * 5)) * 1000;
+        let cancelationtime2 = (Math.ceil(Math.random() * 5)) * 1000;
+        let cancelationtime3 = (Math.ceil(Math.random() * 5)) * 1000;
+
+        setTimeout(() => {
+            mtog.pop()
+            console.log(mtog);
+        }, cancelationtime1);
+        
+        setTimeout(() => {
+            btog.pop()
+            console.log(btog);
+        }, cancelationtime2);
+        
+        setTimeout(() => {
+            ptog.pop()
+            console.log(ptog);
+        }, cancelationtime3);
+    }
+
+    let interval = setInterval(ticketcancle,1000);
+</script>

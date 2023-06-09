@@ -1,0 +1,52 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo session</title>
+        <style>
+            .done {
+                color: green;
+                font-size: 13px;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Todo App</h1>
+        <input type="text" id="inp">
+        <button onclick="addtask()">Add Task</button>
+        <div id="tasks"></div>
+    </body>
+    </html>
+
+    <script>
+
+        let id = 0;
+        function addtask() {
+            let div = document.createElement("div");
+            let task = document.getElementById("inp").value;
+            if(task !== ""){
+                    id= id + 1;
+                div.innerHTML = `<p id=${id}>${task}</p><button onclick="done(${id})">Done</button> <button onclick = "remove(${id})" >Remove</button>`;
+                document.querySelector("#tasks").append(div);
+                document.getElementById("inp").value = null;
+                document.getElementById("inp").placeholder = "";
+            }
+            else{
+                document.getElementById("inp").placeholder = "Please Enter Some value";
+            }
+        }
+
+
+        function done(i){
+            let x = document.getElementById(i);
+            x.setAttribute("class", "done");
+        }
+
+        function remove(i){
+            let x = document.getElementById(i);
+            x.parentElement.remove();
+        }
+    </script>

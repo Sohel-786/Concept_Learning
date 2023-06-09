@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: url('/assets/Travel-Agency-Tour-Agency.jpg');
+    background-size: 100% 100%;
+    border-radius: 0px 0px 20px 20px;
+}
+
+header h1 {
+    font-size: 45px;
+    color: #000000b8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px 10px;
+    margin: 10px 0px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+button {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    background-color: #006eff;
+    color: white;
+    border-color: transparent;
+    border-radius: 10px;
+
+}
+ 
+button:hover {
+    cursor: pointer;
+    color: #0004ff;
+    background-color: white;
+    border-color: black;
+}
+
+button:active {
+    background-color: #22ff00;
+    color: black;
+    font-weight: 800;
+    border-color: white;
+}
+
+main {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+#data {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 5px;
+}
+
+#data div {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #e4e2e2;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+img {
+    width: 250px;
+    max-height: 300px;
+    border-radius: 10px;
+}
