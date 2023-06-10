@@ -4,7 +4,9 @@ const app = express();
 
 const connect = require('./config/db')
 app.use(express.json())
-app.use(express.urlencoded({extended : false}));
+app.use(express.urlencoded({extended : false}));  // for the input data from the frontend
+
+app.use('/static', express.static(path.join(__dirname, "public"))); // it's for applying stylesheet in ejs
 
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
