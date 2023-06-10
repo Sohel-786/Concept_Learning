@@ -8,6 +8,15 @@
 </head>
 <body>
     <%- include("header.ejs")%>
-    <h1>create</h1>
+    <div>
+        <h1>Add New Member</h1>
+        <form action="\team" method="post">
+            <input type="text" name="img" placeholder="Enter Member's Image" required><br>
+            <input type="text" name="name" placeholder="Enter Full Name" required><br>
+            <input type="text" name="designation" placeholder="Enter Designation" required><br>
+            <input type="text" name="ex" placeholder="Enter Ex Potision"><br>
+            <button type="submit">ADD</button>
+        </form>
+    </div>
 </body>
 </html>

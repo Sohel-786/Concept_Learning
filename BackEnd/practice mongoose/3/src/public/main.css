@@ -10,7 +10,7 @@ header{
     justify-content: space-between;
     padding: 15px 25px;
     align-items: center;
-    background-color: #2483e8;
+    border-bottom: 1.5px solid rgb(227, 222, 222);
 }
 
 header div{
@@ -24,7 +24,7 @@ header div{
 
 header div img {
     height: 100%;
-    width: 80px;
+    width: 100px;
 }
 
 header div:nth-child(1){
@@ -166,9 +166,12 @@ header div:nth-child(1){
 section {
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
     align-items: center;
     padding: 70px;
     gap: 20px;
+    width: 100%;
+    height: 600px;
 }
 
 section div{
@@ -176,9 +179,23 @@ section div{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+section>div{
+    width: 50%;
+    height: 100%;
+}
+
 section div:nth-child(1){
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
+}
+
+section div:nth-child(1) div{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 section div:nth-child(1) div:nth-child(1){
@@ -195,4 +212,72 @@ section div:nth-child(1) div:nth-child(1){
 
 span{
     color: #ffdb66;
+}
+
+section p{
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.average {
+   background-color: rgb(111, 189, 205);
+   width: 48.46%;
+}
+
+.high {
+    background-color:  rgb(111, 205, 158);
+    width: 48.50%;
+}
+
+.news-box{
+    background-color:  rgb(110, 113, 204);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+}
+
+.news-box img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.news-box h1{
+    margin: 35px 0px;
+}
+
+.button-22 {
+  align-items: center;
+  appearance: button;
+  background-color: rgb(110, 113, 204);
+  border: 1px solid white;
+  border-radius: 8px;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "RM Neue",sans-serif;
+  font-size: 13px;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 21px;
+  text-align: center;
+  text-transform: none;
+  transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-22:active {
+  background-color: #006AE8;
+}
+
+.button-22:hover {
+    background-color: rgb(112, 114, 163);
 }
