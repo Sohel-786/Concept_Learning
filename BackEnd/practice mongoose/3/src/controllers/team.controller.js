@@ -14,8 +14,7 @@ router.get('/home', async (req, res) =>{
 
 router.get('/members', async (req, res) =>{
     try {
-        let team = await Team.create(req.body);
-        return res.status(201).send(team);
+        let team = await Team.find();
         return res.render('allTeamMembers', {
             team: team
         });

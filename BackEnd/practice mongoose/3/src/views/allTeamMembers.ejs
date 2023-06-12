@@ -8,6 +8,21 @@
 </head>
 <body>
     <%- include("header.ejs")%>
-    <h1>All Team Members</h1>
+    <div class="members">
+        <h1>Team Members</h1>
+        <div class="team_cart">
+            <% team.forEach((el) =>{ %>
+                    <div>
+                        <img src= "<%= el.img %>"" alt="member_img">
+                    </div>
+            <% }) %>
+        </div>
+    </div>
+    <!-- <% team.forEach((el) =>{ %>
+            <li> <%= el.img %></li>    
+            <li> <%= el.name %></li>    
+            <li> <%= el.designation %></li>    
+            <li> <%= el.ex %></li>    
+    <% }) %> -->
 </body>
 </html>
