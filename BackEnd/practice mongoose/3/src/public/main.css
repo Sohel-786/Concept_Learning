@@ -281,3 +281,60 @@ section p{
 .button-22:hover {
     background-color: rgb(112, 114, 163);
 }
+
+.adduser {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.adduser h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  filter: drop-shadow(5px 15px 5px black);
+  color: rgb(15, 182, 60);
+  margin-bottom: 30px;
+}
+
+.adduser form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 30%;
+}
+
+.adduser form input{
+   border: none;
+   border-bottom: 2px solid #006aff;
+   width: 100%;
+   font-size: 17px;
+   font-weight: 600;
+   margin-top: 20px;
+}
+
+.adduser form input:focus{
+  outline: none;
+}
+
+.adduser form button {
+  color: #fff;
+  padding: 15px 25px;
+  background-color: #38D2D2;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  cursor: pointer;
+}

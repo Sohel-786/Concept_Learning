@@ -14,7 +14,11 @@ router.get('/home', async (req, res) =>{
 
 router.get('/members', async (req, res) =>{
     try {
-        return res.render('allTeamMembers');
+        let team = await Team.create(req.body);
+        return res.status(201).send(team);
+        return res.render('allTeamMembers', {
+            team: team
+        });
 
     } catch (err) {
         return res.status(400).send(err.message);
@@ -31,9 +35,8 @@ router.get('/create', async (req, res) =>{
 })
 
 router.post('', async (req, res)=>{
-    console.log(req.body);
-    // let team = await Team.create(req.body);
-    // return res.status(201).send(team);
+    let team = await Team.create(req.body);
+    return res.status(201).send(team);
 })
 
 module.exports = router;
