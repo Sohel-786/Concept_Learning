@@ -8,21 +8,16 @@
 </head>
 <body>
     <%- include("header.ejs")%>
-    <div class="members">
+    <div id="parent">
         <h1>Team Members</h1>
-        <div class="team_cart">
             <% team.forEach((el) =>{ %>
-                    <div>
-                        <img src= "<%= el.img %>"" alt="member_img">
-                    </div>
+                
+                <div style="background-image: url('<%= el.img %>'); background-size: 100% 100%;">
+                    <h3 style="margin-top: 90%;"><%= el.name %></h3>
+                    <p><>%= el.designation %</p>
+                    <div> Ex- <img src="<%= el.ex %>" alt="logo"></div>
+                </div>
             <% }) %>
-        </div>
     </div>
-    <!-- <% team.forEach((el) =>{ %>
-            <li> <%= el.img %></li>    
-            <li> <%= el.name %></li>    
-            <li> <%= el.designation %></li>    
-            <li> <%= el.ex %></li>    
-    <% }) %> -->
 </body>
 </html>
