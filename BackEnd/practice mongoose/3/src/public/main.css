@@ -385,6 +385,7 @@ p + div > img {
   height: 100%;
   object-fit: fill;
   border-radius: 0%;
+  filter: drop-shadow(10px 10px 20px black);
 }
 #parent > div > p + div{
   width: 100%;

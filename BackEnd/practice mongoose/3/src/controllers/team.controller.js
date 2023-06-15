@@ -34,8 +34,12 @@ router.get('/create', async (req, res) =>{
 })
 
 router.post('', async (req, res)=>{
-    let team = await Team.create(req.body);
-    // return res.status(201).send(team);
+    try{
+            let team = await Team.create(req.body);
+            return res.status(200).render('addTeamMember');
+    }catch (err) {
+        return res.status(400).send(err.message);
+    }
 })
 
 module.exports = router;
