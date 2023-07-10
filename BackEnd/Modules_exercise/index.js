@@ -83,18 +83,34 @@ const fs = require('fs');
 //     console.log('Deleted')
 // })
 
-let buffer = new Buffer.from('This is New file going to get created using fs.open');
+// let buffer = new Buffer.from('This is New file going to get created using fs.open');
 
-fs.open('./txtFiles/mytxt.txt', 'a', function(err, fd) {
-    if(err) throw err;
+// fs.open('./txtFiles/mytxt.txt', 'a', function(err, fd) {
+//     if(err) throw err;
 
-    // fs.write(fd, buffer, 0, buffer.length, null, (err, bytes) =>{
-    //     if(err) throw "Can't write to file";
-    //     console.log(bytes, "Characters added to file");
-    // })
+//     // fs.write(fd, buffer, 0, buffer.length, null, (err, bytes) =>{
+//     //     if(err) throw "Can't write to file";
+//     //     console.log(bytes, "Characters added to file");
+//     // })
 
-    fs.write(fd, "This is the string i wanted to add", 0, 'utf-8', function(err, bytes){
-        if(err) throw err;
-        console.log(bytes, "added to file");
-    })
-})
+//     fs.write(fd, "This is the string i wanted to add", 0, 'utf-8', function(err, bytes){
+//         if(err) throw err;
+//         console.log(bytes, "added to file");
+//     })
+// })
+
+const os = require('os');
+
+console.log('CPU Architecture', os.arch());
+console.log('Free Memory', os.freemem());
+console.log('Total Memory', os.totalmem());
+console.log('Temp Dir', os.tmpdir());
+
+console.log('Os Platform -', os.platform());
+console.log('Os Release -', os.release());
+console.log('Os endianness -', os.endianness());
+// console.log('Os Version -', os.version());
+// console.log('Os Version -', os.cpus());
+
+console.log('HostName', os.hostname())
+console.log('Os Type', os.type())
