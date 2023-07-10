@@ -60,9 +60,41 @@ const fs = require('fs');
 //     console.log('Successfully Appended');
 // })
 
- try {
-        fs.appendFileSync('./txtFiles/input.txt', " - PW Skills");
-        console.log('success')
- } catch (err) {
-    console.log(err)
- }
+//  try {
+//         fs.appendFileSync('./txtFiles/input.txt', " - PW Skills");
+//         console.log('success')
+//  } catch (err) {
+//     console.log(err)
+//  }
+
+
+// fs.unlink('./txtFiles/input.txt', (err) =>{
+//     if(err) throw err;
+//     console.log('Deleted');
+// })
+
+// fs.appendFile('./txtFiles/mytxt.txt', "This is the new file being created by appendFile", (err)=>{
+//     if(err) throw err;
+//     console.log("Successfully created");
+// })
+
+// fs.unlink('./txtFiles/mytxt.txt', (err) =>{
+//     if(err) throw err;
+//     console.log('Deleted')
+// })
+
+let buffer = new Buffer.from('This is New file going to get created using fs.open');
+
+fs.open('./txtFiles/mytxt.txt', 'a', function(err, fd) {
+    if(err) throw err;
+
+    // fs.write(fd, buffer, 0, buffer.length, null, (err, bytes) =>{
+    //     if(err) throw "Can't write to file";
+    //     console.log(bytes, "Characters added to file");
+    // })
+
+    fs.write(fd, "This is the string i wanted to add", 0, 'utf-8', function(err, bytes){
+        if(err) throw err;
+        console.log(bytes, "added to file");
+    })
+})
