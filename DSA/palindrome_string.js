@@ -29,6 +29,6 @@ function palindrome_or_not(str){
     }
 }
 
-let result = palindrome_or_not('aaac');
+let result = palindrome_or_not('abacbc');
 
 console.log(`Is Input Strin is Palindrome ? ${result}!`);

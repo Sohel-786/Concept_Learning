@@ -54,4 +54,4 @@ function char_N_maker(arr){
     console.log(N);
 }
 
-let st̥̥̥̥̥̥̥̥̥̥r = 'sohel';
+let str = 'sohel';
