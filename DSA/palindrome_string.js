@@ -1,4 +1,4 @@
-// put any string and function will check that it's palindrome or not
+// put any string and function will check if that string can be a palindrome after swapping some char poitions, or not.
 
 function palindrome_or_not(str){
     let obj = {};
