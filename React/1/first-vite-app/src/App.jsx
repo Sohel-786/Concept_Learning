@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <button>
+      <div className='App'>
+        <button id='btn'>
           <span>
             submit
           </span>
