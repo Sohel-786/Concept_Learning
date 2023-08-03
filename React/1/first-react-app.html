@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 </head>
 <body>
     <div id="root"></div>
 
 
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
 
+ <script>
+ 
+    //  const btn = () => React.createElement("button", {id: 'btn'}, React.createElement('span', {}, 'Submit'));
+ 
+    //  const root = document.getElementById('root');
+ 
+    //  const rootElement = ReactDOM.createRoot(root);
+ 
+    //  rootElement.render(btn());
+
+        ReactDOM.render(
+
+            React.createElement('div', {}, 
+                'Welcome',
+                React.createElement('p', {}, 'Hello')
+            ),
+            document.getElementById('root')
+        )
+ 
+ </script>
 </body>
 </html>
 
  <!--JSX will be next topic -->
-
-<script>
-
-    const btn = () => React.createElement("button", {id: 'btn'}, React.createElement('span', {}, 'Submit'));
-
-    const root = document.getElementById('root');
-
-    const rootElement = ReactDOM.createRoot(root);
-
-    rootElement.render(btn());
-
-</script>
