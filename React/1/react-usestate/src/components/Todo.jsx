@@ -11,11 +11,12 @@ const Todos = () =>{
 
     function handleTodo(){    
         setList([...list, { status : false, todo: text}]);
+        setText('');
     }
 
     return <div>
         
-        <input onChange={handleChange} type="text" placeholder="Add Todo" /> <br />
+        <input value={text} onChange={handleChange} type="text" placeholder="Add Todo" /> <br />
         <button onClick={handleTodo}>Add</button>
 
         <ul>
