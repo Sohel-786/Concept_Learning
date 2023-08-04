@@ -10,7 +10,7 @@ const Todos = () =>{
     }
 
     function handleTodo(){    
-        setList([...list, text]);
+        setList([...list, { status : false, todo: text}]);
     }
 
     return <div>
@@ -19,9 +19,9 @@ const Todos = () =>{
         <button onClick={handleTodo}>Add</button>
 
         <ul>
-            {list.map((el) => (
-                <li key={el} >{el}</li>
-            ))}
+            {list.map((e) => {
+                return <li key={e}>{e.todo} :- {e.status ? 'Done' : 'Not Done'}</li>
+            })}
         </ul>
     </div>
 }
