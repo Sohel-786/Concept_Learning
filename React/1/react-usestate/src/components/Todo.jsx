@@ -17,11 +17,13 @@ const Todos = () =>{
     function handleClick(el, i){
 
         if(el.status === false){
-            // console.log(list[i])
-            setList(list[i].status = true)
+            el.status = true;
+            setList([...list])
             
         }else{
-            setList(list[i].status = false)
+            el.status = false;
+            setList([...list])
+            
         }
     }
 
@@ -33,7 +35,7 @@ const Todos = () =>{
         <ul>
             {list.map((el,i) => {
 
-                return <li key={el.todo} >{el.todo} :- {el.status ? 'Done' : 'Not Done'} 
+                return <li key={el.todo} >{el.todo} - {el.status ? 'Done ' : 'Not Done '} 
                     <button onClick={() =>{
                     handleClick(el, i)
                 }}>{el.status ? 'Undone' : 'Done'}</button></li>
