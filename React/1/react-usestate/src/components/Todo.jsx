@@ -14,14 +14,30 @@ const Todos = () =>{
         setText('');
     }
 
+    function handleClick(el, i){
+
+        if(el.status === false){
+            // console.log(list[i])
+            setList(list[i].status = true)
+            
+        }else{
+            setList(list[i].status = false)
+        }
+    }
+
     return <div>
         
         <input value={text} onChange={handleChange} type="text" placeholder="Add Todo" /> <br />
         <button onClick={handleTodo}>Add</button>
 
         <ul>
-            {list.map((e) => {
-                return <li key={e}>{e.todo} :- {e.status ? 'Done' : 'Not Done'}</li>
+            {list.map((el,i) => {
+
+                return <li key={el.todo} >{el.todo} :- {el.status ? 'Done' : 'Not Done'} 
+                    <button onClick={() =>{
+                    handleClick(el, i)
+                }}>{el.status ? 'Undone' : 'Done'}</button></li>
+
             })}
         </ul>
     </div>
