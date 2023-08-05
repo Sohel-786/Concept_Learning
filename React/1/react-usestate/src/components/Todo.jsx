@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { v4 as uuidv4 } from 'uuid'; 
 
 const Todos = () =>{
 
@@ -9,8 +10,9 @@ const Todos = () =>{
         setText(e.target.value);
     }
 
-    function handleTodo(){    
-        setList([...list, { status : false, todo: text}]);
+    function handleTodo(){  
+        let payload = { status : false, todo: text, key : uuidv4()}
+        setList([...list, payload]);
         setText('');
     }
 
@@ -35,7 +37,7 @@ const Todos = () =>{
         <ul>
             {list.map((el,i) => {
 
-                return <li key={el.todo} >{el.todo} - {el.status ? 'Done ' : 'Not Done '} 
+                return <li key={el.key} >{el.todo} - {el.status ? 'Done ' : 'Not Done '} 
                     <button onClick={() =>{
                     handleClick(el, i)
                 }}>{el.status ? 'Undone' : 'Done'}</button></li>
