@@ -7,6 +7,7 @@ function TodosList({list, handletodo}) {
             list.map((el) => {
                 return <div key = {el.id} style={{
                     border : "1px solid blue",
+                    textDecoration : el.status ? 'line-through' : 'none',
                     padding : "10px",
                     width : "50%",
                     margin : "10px",

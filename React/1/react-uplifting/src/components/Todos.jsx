@@ -24,8 +24,18 @@ function Todos() {
         }
     }
 
-    return <div>
+    function handleRefresh(){
+        const newList = todoList.filter( (el) => {
+            if(el.status === false){
+                return el;
+            }
+        })
 
+        setList([...newList]);
+    }
+
+    return <div>
+        <button onClick={handleRefresh}>Refresh</button>
         <TodosInput handlePushtodo={handlePushtodo}/>
         <TodosList list={todoList} handletodo={handleTodo} />
 
