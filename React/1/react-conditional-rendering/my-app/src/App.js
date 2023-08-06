@@ -1,10 +1,11 @@
 import './App.css';
 import Form from './components/Form'; 
+import { Todos } from './components/Todo';
 
 function App() {
   return (
    <div>
-    <Form />
+    <Todos />
    </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { v4 as uuidv4 } from 'uuid'; 
+import Todoitems from "./Todoitems";
 
 const Todos = () =>{
 
@@ -11,12 +12,12 @@ const Todos = () =>{
     }
 
     function handleTodo(){  
-        let payload = { status : false, todo: text, key : uuidv4()}
+        let payload = { status : false, todo: text, id : uuidv4()}
         setList([...list, payload]);
         setText('');
     }
 
-    function handleClick(el, i){
+    function handleClick(el){
 
         if(el.status === false){
             el.status = true;
@@ -34,16 +35,11 @@ const Todos = () =>{
         <input value={text} onChange={handleChange} type="text" placeholder="Add Todo" /> <br />
         <button onClick={handleTodo}>Add</button>
 
-        <ul>
-            {list.map((el,i) => {
-
-                return <li key={el.key} >{el.todo} - {el.status ? 'Done ' : 'Not Done '} 
-                    <button onClick={() =>{
-                    handleClick(el, i)
-                }}>{el.status ? 'Undone' : 'Done'}</button></li>
-
-            })}
-        </ul>
+        {
+            list.map((el) => {
+                return <Todoitems key={el.id} Todo={el} handleClick={handleClick}></Todoitems>
+            })
+        }
     </div>
 }
 
