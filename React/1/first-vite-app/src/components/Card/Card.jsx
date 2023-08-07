@@ -12,7 +12,16 @@ function Card({ onplay, player, index, gameEnd }){
     }
 
 
-    return <div className= "card" onClick={() => !gameEnd && player==='' && onplay(index)}>
+    return <div 
+        style={player === 'X' ?  
+                {backgroundColor : 'red', color: 'white', borderColor : 'white'}
+                  : player === 'O' ? 
+                        {backgroundColor : '#00ff11', color: 'black', borderColor : 'white'} 
+                            :  {backgroundColor : '#868686'}
+
+                }
+                   className= "card" onClick={() => !gameEnd && player==='' && onplay(index)
+                   }>
         {icon}
     </div>
 }   

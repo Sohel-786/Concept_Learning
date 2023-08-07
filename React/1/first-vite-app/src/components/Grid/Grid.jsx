@@ -28,6 +28,7 @@ function Grid({ numberofCards }) {
 
         setBoard([...board]);
         setTurn(!turn);
+
     }
 
     function handleReset(){

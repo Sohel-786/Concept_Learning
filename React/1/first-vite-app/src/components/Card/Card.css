@@ -1,5 +1,5 @@
 .card {
-    border : 1px solid black;
+    border : 2px solid black;
     padding : 2em;
     display : flex;
     justify-content: center;
@@ -8,4 +8,9 @@
     width: 80px;
     background-color: var(--yellow);
     border-radius: 30px;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: 2px solid #00ff11;
 }
