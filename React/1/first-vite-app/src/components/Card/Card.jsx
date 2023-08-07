@@ -17,7 +17,7 @@ function Card({ onplay, player, index, gameEnd }){
                 {backgroundColor : 'red', color: 'white', borderColor : 'white'}
                   : player === 'O' ? 
                         {backgroundColor : '#00ff11', color: 'black', borderColor : 'white'} 
-                            :  {backgroundColor : '#868686'}
+                            :  {backgroundColor : 'initial', color: 'white'}
 
                 }
                    className= "card" onClick={() => !gameEnd && player==='' && onplay(index)
