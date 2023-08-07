@@ -1,10 +1,12 @@
-
 import './App.css'
-import { Counter } from './components/Counter'
+import Grid from './components/Grid/Grid'
 
 
 function App() {
-  return <Counter />
+
+  return <>
+      <Grid numberofCards={9}/>
+  </>
 }
 
 export default App
