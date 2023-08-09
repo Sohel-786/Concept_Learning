@@ -4,24 +4,24 @@ function shownotewritter(){
 
     let element = document.querySelector(".note-writter");
     let text = element.getAttribute("id");
-        if(text == "fake"){
-            document.querySelector(".see-notes").setAttribute("id", "fake");
+        if(text == "hide"){
+            document.querySelector(".see-notes").setAttribute("id", "hide");
             document.querySelector(".note-writter").setAttribute("id", "show"); 
         }
         else if(text == "show"){
-            document.querySelector(".note-writter").setAttribute("id", "fake"); 
+            document.querySelector(".note-writter").setAttribute("id", "hide"); 
         }
 }
 
 function shownotes() {
     let element = document.querySelector(".see-notes");
     let text = element.getAttribute("id");
-        if(text == "fake"){
-            document.querySelector(".note-writter").setAttribute("id", "fake"); 
+        if(text == "hide"){
+            document.querySelector(".note-writter").setAttribute("id", "hide"); 
             document.querySelector(".see-notes").setAttribute("id", "show"); 
         }
         else if(text == "show"){
-            document.querySelector(".see-notes").setAttribute("id", "fake"); 
+            document.querySelector(".see-notes").setAttribute("id", "hide"); 
         }
 }
 
