@@ -61,13 +61,6 @@ function savenote(){
     }
     else{
 
-        // for(let i = 0; i<=30; i++){ // Looping of the Data which is an Object - of arrays - which only have 30 key-value
-        //     // This is because user can enter a number which 
-        //     if(day == i){
-        //         data["day" + i].push(note); // if any key is equal to the value entered in the day input then pushing it in the array( value ) of that key ( of Data( Object ) )
-        //     }
-        // }
-
         if(day > 30){
             alert('You can only Store in 30 days range');
             return
@@ -85,9 +78,7 @@ function savenote(){
 //// From here, making a section where we can see the saved notes
 
 function presentnote(){
-        
-        console.log(data);
-
+    
         let selectedday = document.getElementById("no").value;// getting the value of day input(Number)
 
                     let key = ("day"+selectedday)
@@ -130,12 +121,9 @@ function clearnote(){
     document.getElementById("number").value = "";
 }
 
-
-// Here I have defined the functionality for the close which is present in the div where the saved notes get displayed so that by clicking on it we can remove the current displayed note from the presenter
-
 document.querySelector(".close").addEventListener("dblclick",remover);
 
-function remover(){
-    event.target.nextElementSibling.remove(); // This will remove the complete div which is made by the presentnote function from the display
+function remover(e){
+    e.target.nextElementSibling.remove(); // This will remove the complete div which is made by the presentnote function
 }
 
