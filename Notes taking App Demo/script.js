@@ -28,7 +28,7 @@ function shownotes() {
 ///// -------- Here that first two button parts ends --------------- ///////
 
 
-//// ***** Here i declared and defined the Object of arrays which getting stored i local storage *****///
+//// ***** Here i declared and defined the Object of arrays which are getting stored in local storage *****///
 
 let data;   //  Declaration without any value, means default value is null
 
@@ -37,7 +37,7 @@ data = localStorage.getItem('notes'); // Here I am trying to get whatever is pre
         if(data == null){
             data = {};              // Object declaration
 
-            for(let i = 1; i<=30;i++){   // This is loop is making 30 key-value(array) pair in object
+            for(let i = 1; i<=30;i++){   // This is loop which will make 30 key-value(array) pair in object
                 let key = "day" + i;
                 data[key] = [];
             }
@@ -56,16 +56,24 @@ function savenote(){
     let note = document.getElementById("note").value; // Getting value entered in the input tags 
     let day = document.getElementById("number").value;
 
-    if(note.trim() == ""){
+    if((note.trim()).length == 0){
         document.getElementById("note").placeholder = 'You have to Enter Something first';
     }
     else{
 
-        for(let i = 0; i<=30; i++){ // Looping of the Data which is Object of arrays which only have 30 key-value
-            if(day == i){
-                data["day" + i].push(note); // if any key is equal to the value entered in the day input then pushing it in the array( value ) of that key ( of Data( Object ) )
-            }
+        // for(let i = 0; i<=30; i++){ // Looping of the Data which is an Object - of arrays - which only have 30 key-value
+        //     // This is because user can enter a number which 
+        //     if(day == i){
+        //         data["day" + i].push(note); // if any key is equal to the value entered in the day input then pushing it in the array( value ) of that key ( of Data( Object ) )
+        //     }
+        // }
+
+        if(day > 30){
+            alert('You can only Store in 30 days range');
+            return
         }
+    
+        data["day" + day].push((note.trim()));
     
         localStorage.setItem('notes', JSON.stringify(data)); // Converting the Data ( Object ) back into the stringify formet and pushing it back in to the local storage
         clearnote();
@@ -77,24 +85,17 @@ function savenote(){
 //// From here, making a section where we can see the saved notes
 
 function presentnote(){
-
-
-        let checkdata = JSON.parse(localStorage.getItem('notes'));// Getting whatever present in LS
+        
+        console.log(data);
 
         let selectedday = document.getElementById("no").value;// getting the value of day input(Number)
 
-        for(let i = 0; i<=30 ; i++){    // Looping 30 times so that it can be decided that which day note should be displayed
+                    let key = ("day"+selectedday)
 
-            if(selectedday == i){ // if any number ( input value ) is from 1 to 30 then it will go in
-
-                for(let key in checkdata){  // looping over the Data ( Object Of Arrays)
-
-                    if((key == ("day"+i))){ // Key the day like - day1 ,day2 etc.
-
-                            let text = checkdata[key].join(",").trim(); // joining the array and making it a String
+                            let text = data[key].join(","); // joining the array and making it a String
 
                             let heading = document.createElement("h2");
-                            heading.innerText = "Day" + i;
+                            heading.innerText = "Day" + selectedday;
 
                             let mynote = document.createElement("p");
                             
@@ -104,7 +105,7 @@ function presentnote(){
 
                             noteview.setAttribute("class", "note-view");    // Giving some styles to it
 
-                            if(text == ""){ // if there is no note saved then it will go in
+                            if(text.length == 0){ // if there is no note saved then it will go in
 
                                 mynote.innerText = "There is no Note";
                                 mynote.style.color = "red";
@@ -121,11 +122,6 @@ function presentnote(){
                             }
                             
                     }
-                }
-            }
-        }
-
-}
 
 // Here Is the function for the button present just near the Save button of notes to clear
 
