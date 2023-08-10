@@ -46,25 +46,26 @@
 <script>
       function addProduct(){
         event.preventDefault();
-        let name = document.getElementById("name").value;
+
+        let form = document.querySelector('form');
+
+      
         let n = document.createElement("h1");
-        n.innerHTML = name;
+        n.innerHTML = form.name.value;
 
-        let url = document.getElementById("url").value;
         let img = document.createElement("img");
-        img.setAttribute("src", url);
+        img.setAttribute("src", form.url.value);
 
-        let price = document.getElementById("price").value;
         let p = document.createElement("p");
-        p.innerHTML = price + "&#8377";
+        p.innerHTML = form.price.value + "&#8377";
 
         let div = document.createElement("div");
         div.append(img, n, p);
 
         document.querySelector(".container").append(div);
 
-        document.getElementById("name").value = "";
-        document.getElementById("url").value = "";
-        document.getElementById("price").value = "";
+        form.name.value = "";
+        form.url.value = "";
+        form.price.value = "";
       }
 </script>
