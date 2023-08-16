@@ -8,6 +8,13 @@ export function Todo(){
 
 
     useEffect(() => {
+
+       getTodos();
+
+    }, []);
+
+
+    function getTodos(){
         fetch('http://localhost:3001/todos')
         .then((data) =>{
             return data.json()
@@ -15,7 +22,7 @@ export function Todo(){
         .then((data) => {
             setTodoList(data);
         })
-    }, []);
+    };
 
     function handleChange(e){
         setText(e.target.value);
@@ -30,7 +37,9 @@ export function Todo(){
             headers : {
                 "Content-Type" : "application/json",
             }
-        });
+        }).then(() =>{
+            getTodos();
+        })
 
         setText('');
     }
@@ -48,6 +57,14 @@ export function Todo(){
                         </div>
                    }) 
             }
+
+            <button onClick={() =>{
+
+            }}>Prev Page</button>
+
+            <button onClick={() =>{
+                
+            }}>Next Page</button>
         </>
     )
 }
