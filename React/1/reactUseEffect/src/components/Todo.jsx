@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { nanoid } from "nanoid";
 
 export function Todo(){
@@ -6,14 +6,31 @@ export function Todo(){
     const [todoList, setTodoList] = useState([]);
     const [text, setText] = useState('');
 
+
+    useEffect(() => {
+        fetch('http://localhost:3001/todos')
+        .then((data) =>{
+            return data.json()
+        })
+        .then((data) => {
+            setTodoList(data);
+        })
+    }, []);
+
     function handleChange(e){
         setText(e.target.value);
     }
 
     function handleTodo(){
-        let data = { title : text, status : true, id : nanoid(4)};
+        let data = { title : text, status : false, uid : nanoid(4)};
 
-        setTodoList([...todoList, data]);
+        fetch('http://localhost:3001/todos', {
+            method : 'POST',
+            body : JSON.stringify(data),
+            headers : {
+                "Content-Type" : "application/json",
+            }
+        });
 
         setText('');
     }
@@ -25,9 +42,9 @@ export function Todo(){
 
             {
                    todoList.map((el) => {
-                        return <div key={el.id}>
+                        return <div key={el.uid}>
                             {el.title} 
-                            <button>{el.status ? 'Done' : 'Undone'}</button>
+                            <button>{el.status ? 'Undone' : 'Done'}</button>
                         </div>
                    }) 
             }
