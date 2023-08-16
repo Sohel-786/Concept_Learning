@@ -5,18 +5,22 @@ function Counter(){
 
     useEffect(() =>{
 
-        let clear = setInterval(() => {
+        let id = setInterval(() => {
             setCounter((value) => {
                 if(value !== 0){   
-                    console.log(count);
                     return value - 1;
                 }
                 
-                console.log(count);
-                clearInterval(clear);
+                console.log(id);
+                clearInterval(id);
                 return 0;
             });
         }, 1000);
+
+        return () =>{
+            console.log('Unmounting phase');
+            clearInterval(id)
+        }
 
     }, []);
 
