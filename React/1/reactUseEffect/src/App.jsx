@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import './App.css'
 import Counter from './components/Counter'
+import { Todo } from './components/Todo';
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <div className='App'>
-        { (show) ? (
+        {/* { (show) ? (
           <>
           <Counter />
           <button onClick={() =>{
@@ -22,7 +23,9 @@ function App() {
             setShow(true)
           }}>Show Counter</button>
          )
-        }
+        } */}
+
+        <Todo />
     </div>
   )
 }
