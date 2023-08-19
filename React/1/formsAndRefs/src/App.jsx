@@ -24,10 +24,12 @@ function App() {
           <div style={{
             width : '200px',
             height : '200px',
-            position : 'absolute',
-            top : `${pageY}px`,
-            left : `${pageX}px`,
-            backgroundColor: 'red'
+            position : 'sticky',
+            top : `${pageY - 90}px`,
+            left : `${pageX - 90}px`,
+            backgroundColor: 'red',
+            borderRadius : '100px'
+
           }}>
 
           </div>
