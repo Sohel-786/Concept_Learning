@@ -32,4 +32,3 @@ function EventsEx() {
   )
 }
 
-export default EventsEx;
