@@ -1,10 +1,11 @@
 import './App.css'
-import Timer from './components/Timer';
+import Forms from './components/Forms';
+// import Timer from './components/Timer';
 
 function App() {
 
   return (
-    <Timer />
+    <Forms />
   )
     
 }
