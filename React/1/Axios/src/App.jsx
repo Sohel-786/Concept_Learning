@@ -75,8 +75,15 @@ function App() {
  async function getTodoByid(uid){
 
     try {
-          let data = await fetch(`http://localhost:3001/todos?uid=${uid}`);
-          data = await data.json();          
+
+          let { data } = await axios.get('http://localhost:3001/todos', {
+            params : {
+              uid
+            },
+          })
+
+          // let data = await fetch(`http://localhost:3001/todos?uid=${uid}`);
+          // data = await data.json();          
           return data;
 
         } catch (err) {
@@ -100,15 +107,22 @@ function App() {
 
 
   function updateTodoByid(id, data){
-    fetch(`http://localhost:3001/todos/${id}`, {
-      method : 'PATCH',
-      body : JSON.stringify(data),
-      headers : {
-        "Content-Type" : "application/json"
-      }
-    }).then(() =>{
-      console.log('update Done');
-    })
+
+      axios.patch(`http://localhost:3001/todos/${id}`, data)
+      .then(() =>{
+          console.log('update Done');
+        })
+
+    // fetch(`http://localhost:3001/todos/${id}`, {
+    //   method : 'PATCH',
+    //   body : JSON.stringify(data),
+    //   headers : {
+    //     "Content-Type" : "application/json"
+    //   }
+    // }).then(() =>{
+    //   console.log('update Done');
+    // })
+
   }
 
   function deleteTodosByid(id){
