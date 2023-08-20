@@ -8,13 +8,6 @@
       "id": 2
     },
     {
-      "title": "Learn Vue",
-      "status": false,
-      "remove": false,
-      "uid": "3TJZF8PU5aF5i6PgIW666",
-      "id": 3
-    },
-    {
       "title": "Create Amazing Projects",
       "status": false,
       "remove": false,
@@ -27,6 +20,13 @@
       "remove": false,
       "uid": "3yloi1sijwSj2Mce_uCrV",
       "id": 5
+    },
+    {
+      "title": "Learn Vue",
+      "status": false,
+      "remove": false,
+      "uid": "o5Q8D3liEBhgK-OS9Dy31",
+      "id": 6
     }
   ]
 }

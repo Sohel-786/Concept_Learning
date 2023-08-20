@@ -4,6 +4,10 @@ import TodoInput from './components/TodoInput/TodoInput'
 import TodoList from './components/TodoList';
 import axios from 'axios';
 
+const todosInstance = axios.create({
+  baseURL : 'http://localhost:3001'
+})
+
 function App() {
 
   const [todoList, setTodoList] = useState([]);
@@ -16,7 +20,7 @@ function App() {
   async function getTodos(){
       try{
 
-          let { data } = await axios.get('http://localhost:3001/todos');
+          let { data } = await todosInstance.get('todos');
 
         // let data = await fetch('http://localhost:3001/todos');
         // data = await data.json(); 
@@ -76,7 +80,7 @@ function App() {
 
     try {
 
-          let { data } = await axios.get('http://localhost:3001/todos', {
+          let { data } = await todosInstance.get('todos', {
             params : {
               uid
             },
@@ -94,7 +98,7 @@ function App() {
 
   function setTodos(data){
 
-      axios.post('http://localhost:3001/todos', data);
+    todosInstance.post('todos', data);
     
     // fetch('http://localhost:3001/todos', {
     //   method : 'POST',
@@ -108,7 +112,7 @@ function App() {
 
   function updateTodoByid(id, data){
 
-      axios.patch(`http://localhost:3001/todos/${id}`, data)
+    todosInstance.patch(`todos/${id}`, data)
       .then(() =>{
           console.log('update Done');
         })
@@ -127,11 +131,11 @@ function App() {
 
   function deleteTodosByid(id){
 
-      axios.delete(`http://localhost:3001/todos/${id}`)
+    todosInstance.delete(`todos/${id}`)
       .then(() =>{
           console.log('Deleted');
         })
-        
+         
     // fetch(`http://localhost:3001/todos/${id}`, {
     //   method : 'DELETE'
     // }).then(() =>{
