@@ -1,0 +1,39 @@
+{
+  "todos": [
+    {
+      "title": "Learn React",
+      "status": false,
+      "remove": false,
+      "uid": "H1ALG9UyQ5hZ8JnmARHto",
+      "id": 2
+    },
+    {
+      "title": "Learn Vue",
+      "status": false,
+      "remove": false,
+      "uid": "3TJZF8PU5aF5i6PgIW666",
+      "id": 3
+    },
+    {
+      "title": "Create Amazing Projects",
+      "status": false,
+      "remove": false,
+      "uid": "k_f1g01s0UH_1W9sIWOEk",
+      "id": 4
+    },
+    {
+      "title": "Learn Axios",
+      "status": false,
+      "remove": false,
+      "uid": "3yloi1sijwSj2Mce_uCrV",
+      "id": 5
+    },
+    {
+      "title": "Learn Backend Properly",
+      "status": false,
+      "remove": false,
+      "uid": "o3GoH7gygpQN3chboz3-C",
+      "id": 6
+    }
+  ]
+}
