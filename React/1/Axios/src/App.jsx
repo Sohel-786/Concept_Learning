@@ -4,6 +4,10 @@ import TodoInput from './components/TodoInput/TodoInput'
 import TodoList from './components/TodoList';
 import { todosInstance } from './utils/todosInstance';
 
+todosInstance.interceptors.request.use(function (config){
+    return config;
+})
+
 function App() {
 
   const [todoList, setTodoList] = useState([]);
