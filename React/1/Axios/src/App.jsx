@@ -126,11 +126,17 @@ function App() {
   }
 
   function deleteTodosByid(id){
-    fetch(`http://localhost:3001/todos/${id}`, {
-      method : 'DELETE'
-    }).then(() =>{
-      console.log('Deleted');
-    })
+
+      axios.delete(`http://localhost:3001/todos/${id}`)
+      .then(() =>{
+          console.log('Deleted');
+        })
+        
+    // fetch(`http://localhost:3001/todos/${id}`, {
+    //   method : 'DELETE'
+    // }).then(() =>{
+    //   console.log('Deleted');
+    // })
   }
 
 
