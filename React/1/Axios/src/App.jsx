@@ -2,11 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import style from './App.module.css'
 import TodoInput from './components/TodoInput/TodoInput'
 import TodoList from './components/TodoList';
-import axios from 'axios';
-
-const todosInstance = axios.create({
-  baseURL : 'http://localhost:3001'
-})
+import { todosInstance } from './utils/todosInstance';
 
 function App() {
 
@@ -20,7 +16,7 @@ function App() {
   async function getTodos(){
       try{
 
-          let { data } = await todosInstance.get('todos');
+          let { data } = await todosInstance.get('/todos');
 
         // let data = await fetch('http://localhost:3001/todos');
         // data = await data.json(); 
@@ -80,7 +76,7 @@ function App() {
 
     try {
 
-          let { data } = await todosInstance.get('todos', {
+          let { data } = await todosInstance.get('/todos', {
             params : {
               uid
             },
@@ -112,7 +108,7 @@ function App() {
 
   function updateTodoByid(id, data){
 
-    todosInstance.patch(`todos/${id}`, data)
+    todosInstance.patch(`/todos/${id}`, data)
       .then(() =>{
           console.log('update Done');
         })
@@ -131,7 +127,7 @@ function App() {
 
   function deleteTodosByid(id){
 
-    todosInstance.delete(`todos/${id}`)
+    todosInstance.delete(`/todos/${id}`)
       .then(() =>{
           console.log('Deleted');
         })
