@@ -17,12 +17,16 @@ function App() {
     <>
       <div className='App'>
           <Form onSubmit={handleLogin}>
-            <input type="text" placeholder='Sign In'/>
+            <input type="text" placeholder='Enter your username or email'/>
+            <input type="password" placeholder='Enter your password'/>
             <input type="submit" value='Login'/>
           </Form>
 
           <Form onSubmit={handleSignUp}>
-            <input type="text" placeholder='Sign Up'/>
+            <input type="email" placeholder='Enter your email'/>
+            <input type="text" placeholder='Enter your Name'/>
+            <input type="text" placeholder='Choose a username'/>
+            <input type="password" placeholder='Choose a strong password'/>
             <input type="submit" value='SignUp'/>
           </Form>
       </div>
