@@ -1,21 +1,14 @@
-import styled from 'styled-components';
+import { useState } from 'react';
+import { Li } from './styled/Li';
 
-const Li = styled.li `
-    padding: 5px 15px;
-    border-radius: 10px;
-    background-color: #97FFF4;
-    font-size: 12px;
-    font-weight: bolder;
-    color: #0c356a;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border: 1px solid transparent;
-`;
+
 
 function List({list}) {
+    const [theme, setTheme] = useState('light');
     return (
         <ul className="nav_list">
             {
-                list.map((el, i) => <Li key={i}>{el}</Li>)
+                list.map((el, i) => <Li theme={theme} key={i}>{el}</Li>)
             }
         </ul>
     )
