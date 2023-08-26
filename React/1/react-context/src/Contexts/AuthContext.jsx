@@ -1,10 +1,15 @@
-import { createContext } from "react"
+import { createContext, useState } from "react"
 
-export const AuthContext = createContext({login : function(){}})
+export const AuthContext = createContext({ token : '' ,login : function(){}})
 
 export function AuthContextProvider({children}){
-    return <AuthContext.Provider value={{login : function(){
-        console.log('You are currently Logged In')
+
+    const [token, setToken] = useState('')
+
+    return <AuthContext.Provider value={{ token , login : function(){
+        
+            setToken( token ? '' : 'jsefksnsdfjsdfbn121');
+
     }}}>{children}</AuthContext.Provider>
 }
 
