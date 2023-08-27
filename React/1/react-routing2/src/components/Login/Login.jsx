@@ -2,6 +2,7 @@ import axios from "axios";
 import './login.css'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
+import { Navigate } from 'react-router-dom'
 
 function Login(){
     const [formData, setFormdata] = useState({})
@@ -20,7 +21,8 @@ function Login(){
         e.preventDefault();
         axios.post('https://reqres.in/api/login', formData).then((data) =>{
             handleToken(data.data.token);
-        })
+            console.log('login Successful')
+        }).catch(console.error());
     }
 
     return (

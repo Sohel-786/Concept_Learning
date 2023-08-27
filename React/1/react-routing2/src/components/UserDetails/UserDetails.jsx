@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import './userdetails.css'
 import { AuthContext } from "../../Contexts/AuthContext";
 
@@ -8,7 +8,7 @@ function UserDetails(){
 
     const [data, setData] = useState({});
     const { id } = useParams();
-    const { } = useContext(AuthContext);
+    const { token } = useContext(AuthContext);
 
     useEffect(() =>{
         getData();
@@ -17,6 +17,10 @@ function UserDetails(){
     async function getData(){
             const  { data } = await axios.get(`https://reqres.in/api/users/${id}`);
             setData(data.data);
+    }
+
+    if(!token) {
+        return <Navigate to='/Login' />;
     }
 
     return(
