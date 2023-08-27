@@ -4,7 +4,7 @@ import './navbar.css'
 function Navbar({list}){
 
     return (
-        <>
+        <nav>
             {
                 list.map((el, i) => {
                     return <Link key={i} to={ el ==='Home' ?  '/' : `/${el}`}>
@@ -12,7 +12,7 @@ function Navbar({list}){
                     </Link>
                 })
             }
-        </>
+        </nav>
     )
 }
 

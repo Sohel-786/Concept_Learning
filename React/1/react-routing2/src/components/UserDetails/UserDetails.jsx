@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import './userdetails.css'
 
 function UserDetails(){
 
@@ -18,10 +19,10 @@ function UserDetails(){
 
     return(
         <>
-           <div>
+           <div className="card">
                 <img src={data.avatar} alt="avatar" />
                 <h1>{data.first_name} {data.last_name}</h1>
-                <h3>{data.email}</h3>
+                <h3>Contact : {data.email}</h3>
             </div>
         </>
     )
