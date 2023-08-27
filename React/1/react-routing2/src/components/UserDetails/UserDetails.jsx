@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 function UserDetails(){
 
-    const [data, setData] = useState();
+    const [data, setData] = useState({});
     const { id } = useParams();
 
     useEffect(() =>{
@@ -18,12 +18,11 @@ function UserDetails(){
 
     return(
         <>
-        
-            { data && <div>
+           <div>
                 <img src={data.avatar} alt="avatar" />
                 <h1>{data.first_name} {data.last_name}</h1>
                 <h3>{data.email}</h3>
-            </div>}
+            </div>
         </>
     )
 }
