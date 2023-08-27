@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom'
 function Login(){
     const [formData, setFormdata] = useState({})
     const { handleToken } = useContext(AuthContext);
+    const [ dummyToken, setdummyToken] = useState();
 
     function handleChange(e){
         const { name, value } = e.target;
@@ -17,12 +18,19 @@ function Login(){
         })
     }
 
-    function handleLogin(e){
+    async function handleLogin(e){
         e.preventDefault();
-        axios.post('https://reqres.in/api/login', formData).then((data) =>{
-            handleToken(data.data.token);
-            console.log('login Successful')
-        }).catch(console.error());
+        
+        const data = await axios.post('https://reqres.in/api/login', formData);
+
+        handleToken(data.data.token);
+
+        setdummyToken(data.data.token);
+
+    }
+
+    if(dummyToken){
+        return <Navigate  to={'/'} />
     }
 
     return (
