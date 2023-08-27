@@ -3,13 +3,14 @@ import UserList from './components/UserList/UserList';
 import UserDetails from './components/UserDetails/UserDetails';
 import Navbar from './components/Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
+import Login from './components/Login/Login';
 
 function App() {
 
   return (
     <>
          <div>
-          <Navbar list={['Home' ,'About', 'Users', 'Products', 'Contact Us', 'About Site']}/>
+          <Navbar list={['Home' ,'About', 'Users', 'Products', 'Contact Us', 'Login', 'About Site']}/>
         </div>
         <br />
         <br />
@@ -23,7 +24,8 @@ function App() {
           <Route path='/Products' element={<h1>Products Page</h1>} />
           <Route path='/Contact Us' element={<h1>Contact Page</h1>} />
           <Route path='/About Site' element={<h1>About Site Page</h1>} />
-          <Route path='/users/:id' element={<UserDetails />} />
+          <Route path='/Login' element={<Login />} />
+          <Route path='/useors/:id' element={<UserDetails />} />
           <Route path='*' element={<h1>404 Not Found</h1>} />
         
         </Routes>

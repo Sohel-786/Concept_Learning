@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './userdetails.css'
+import { AuthContext } from "../../Contexts/AuthContext";
 
 function UserDetails(){
 
     const [data, setData] = useState({});
     const { id } = useParams();
+    const { } = useContext(AuthContext);
 
     useEffect(() =>{
         getData();
