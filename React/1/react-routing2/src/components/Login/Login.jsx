@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Login(){
     const [formData, setFormdata] = useState({})
-    const { handleToken } = useContext(AuthContext);
+    const { handleToken, token } = useContext(AuthContext);
     // const [ dummyToken, setdummyToken] = useState();
 
     const Navigate = useNavigate();
@@ -33,9 +33,15 @@ function Login(){
 
     }
 
-    // if(dummyToken){
-    //     return <Navigate  to={'/'} />
-    // }
+    if(token){
+        return(
+            <>
+                <button onClick={()=>{
+                    handleToken('');
+                }}>Logout</button>
+            </> 
+        )
+    }
 
     return (
         <form>
