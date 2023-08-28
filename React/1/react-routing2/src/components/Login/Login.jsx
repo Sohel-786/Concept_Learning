@@ -2,12 +2,15 @@ import axios from "axios";
 import './login.css'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Login(){
     const [formData, setFormdata] = useState({})
     const { handleToken } = useContext(AuthContext);
-    const [ dummyToken, setdummyToken] = useState();
+    // const [ dummyToken, setdummyToken] = useState();
+
+    const Navigate = useNavigate();
+    console.log(Navigate)
 
     function handleChange(e){
         const { name, value } = e.target;
@@ -25,13 +28,14 @@ function Login(){
 
         handleToken(data.data.token);
 
-        setdummyToken(data.data.token);
+        // setdummyToken(data.data.token);
+        Navigate('/');
 
     }
 
-    if(dummyToken){
-        return <Navigate  to={'/'} />
-    }
+    // if(dummyToken){
+    //     return <Navigate  to={'/'} />
+    // }
 
     return (
         <form>
