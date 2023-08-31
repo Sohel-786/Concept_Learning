@@ -78,10 +78,10 @@ const fs = require('fs');
 //     console.log("Successfully created");
 // })
 
-// fs.unlink('./txtFiles/mytxt.txt', (err) =>{
-//     if(err) throw err;
-//     console.log('Deleted')
-// })
+fs.unlink('./txtFiles/mytxt.txt', (err) =>{
+    if(err) throw err;
+    console.log('Deleted')
+})
 
 // let buffer = new Buffer.from('This is New file going to get created using fs.open');
 
@@ -99,18 +99,18 @@ const fs = require('fs');
 //     })
 // })
 
-const os = require('os');
+// const os = require('os');
 
-console.log('CPU Architecture', os.arch());
-console.log('Free Memory', os.freemem());
-console.log('Total Memory', os.totalmem());
-console.log('Temp Dir', os.tmpdir());
+// console.log('CPU Architecture', os.arch());
+// console.log('Free Memory', os.freemem());
+// console.log('Total Memory', os.totalmem());
+// console.log('Temp Dir', os.tmpdir());
 
-console.log('Os Platform -', os.platform());
-console.log('Os Release -', os.release());
-console.log('Os endianness -', os.endianness());
-// console.log('Os Version -', os.version());
-// console.log('Os Version -', os.cpus());
+// console.log('Os Platform -', os.platform());
+// console.log('Os Release -', os.release());
+// console.log('Os endianness -', os.endianness());
+// // console.log('Os Version -', os.version());
+// // console.log('Os Version -', os.cpus());
 
-console.log('HostName', os.hostname())
-console.log('Os Type', os.type())
+// console.log('HostName', os.hostname())
+// console.log('Os Type', os.type())
