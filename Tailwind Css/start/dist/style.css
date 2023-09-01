@@ -538,8 +538,8 @@ video {
   display: flex;
 }
 
-.h-25 {
-  height: 100px;
+.h-28 {
+  height: 7rem;
 }
 
 .h-96 {
@@ -550,65 +550,28 @@ video {
   height: 100px;
 }
 
-.h-32 {
-  height: 8rem;
-}
-
-.w-screen {
-  width: 100vw;
+.w-28 {
+  width: 7rem;
 }
 
 .w-\[100px\] {
   width: 100px;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
 .items-center {
   align-items: center;
-}
-
-.items-stretch {
-  align-items: stretch;
-}
-
-.justify-end {
-  justify-content: flex-end;
 }
 
 .justify-center {
   justify-content: center;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border-4 {
   border-width: 4px;
-}
-
-.bg-\[\#50d71e\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(80 215 30 / var(--tw-bg-opacity));
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#2e1ed7\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(46 30 215 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#d7711e\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(215 113 30 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#d7461e\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(215 70 30 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#1ed1d7\] {
@@ -621,26 +584,27 @@ video {
   background-color: rgb(203 30 215 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#d7461e\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(215 70 30 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
 .p-6 {
   padding: 1.5rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .text-center {
   text-align: center;
-}
-
-.align-bottom {
-  vertical-align: bottom;
 }
 
 .text-3xl {
@@ -671,20 +635,28 @@ video {
   transition-duration: 300ms;
 }
 
-.duration-1000 {
-  transition-duration: 1000ms;
-}
-
-.duration-700 {
-  transition-duration: 700ms;
-}
-
 .hover\:h-32:hover {
   height: 8rem;
 }
 
 .hover\:w-32:hover {
   width: 8rem;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.hover\:animate-\[bounce_1s_1\.5\]:hover {
+  animation: bounce 1s 1.5;
 }
 
 .hover\:border-red-400:hover {
