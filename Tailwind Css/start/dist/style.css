@@ -570,6 +570,10 @@ video {
   justify-content: center;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
 .border-4 {
   border-width: 4px;
 }
