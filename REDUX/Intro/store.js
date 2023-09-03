@@ -10,7 +10,12 @@ const reducer = (state, { type , payload}) => {
             counter : state.counter - payload
         };
 
-        default : return{
+        case 'ADD_TODO' : return {
+            ...state,
+            todos : [ ...state.todos , { ...payload } ]
+        };
+
+        default : return {
             ...state
         }
     }
@@ -33,17 +38,22 @@ class Store {
 
 
 const InitialState = {
-    counter : 0
+    counter : 0,
+    todos: []
 }
 
 const store = new Store( reducer , InitialState);
 
 console.log(store.getState());
 
-store.Dispatcher({ type : 'ADD_COUNT', payload : 1});
+store.Dispatcher({ type : 'ADD_COUNT', payload : 2});
 
 console.log(store.getState());
 
 store.Dispatcher({ type : 'SUB_ONE', payload : 1});
+
+console.log(store.getState());
+
+store.Dispatcher({ type : 'ADD_TODO', payload : { id : 1, title : 'Learn Redux', status : false }});
 
 console.log(store.getState());
