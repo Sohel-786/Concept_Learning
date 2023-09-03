@@ -1,3 +1,8 @@
+
+// const { configureStore } = require('@reduxjs/toolkit')
+
+const { configureStore } = require("@reduxjs/toolkit");
+
 const reducer = (state, { type , payload}) => {
     switch(type){
         case 'ADD_COUNT' : return {
@@ -21,20 +26,20 @@ const reducer = (state, { type , payload}) => {
     }
 }
 
-class Store {
-    constructor(reducerFn, InitialState){
-        this.reducer = reducerFn;
-        this.state = InitialState;
-    }
+// class Store {
+//     constructor(reducerFn, InitialState){
+//         this.reducer = reducerFn;
+//         this.state = InitialState;
+//     }
 
-    getState(){
-        return this.state;
-    }
+//     getState(){
+//         return this.state;
+//     }
 
-    Dispatcher(action){
-       this.state = this.reducer(this.state, action);
-    }
-}
+//     Dispatch(action){
+//        this.state = this.reducer(this.state, action);
+//     }
+// }
 
 
 const InitialState = {
@@ -42,18 +47,18 @@ const InitialState = {
     todos: []
 }
 
-const store = new Store( reducer , InitialState);
+const store = configureStore( {reducer , preloadedState : InitialState});
 
 console.log(store.getState());
 
-store.Dispatcher({ type : 'ADD_COUNT', payload : 2});
+store.dispatch({ type : 'ADD_COUNT', payload : 2});
 
 console.log(store.getState());
 
-store.Dispatcher({ type : 'SUB_ONE', payload : 1});
+store.dispatch({ type : 'SUB_ONE', payload : 1});
 
 console.log(store.getState());
 
-store.Dispatcher({ type : 'ADD_TODO', payload : { id : 1, title : 'Learn Redux', status : false }});
+store.dispatch({ type : 'ADD_TODO', payload : { id : 1, title : 'Learn Redux', status : false }});
 
 console.log(store.getState());
