@@ -21,7 +21,7 @@ const { configureStore } = pkg;
 // }
 
 const InitialState = {
-    counter : 0,
+    counter : 1,
     todos: []
 }
 
