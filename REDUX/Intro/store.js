@@ -1,30 +1,9 @@
+// import { configureStore } from '@reduxjs/toolkit'
+import pkg from '@reduxjs/toolkit'
+import { reducer } from './redux/reducer.js';
+import  { addCount, addTodo, subOne } from './redux/actions.js'
 
-// const { configureStore } = require('@reduxjs/toolkit')
-
-const { configureStore } = require("@reduxjs/toolkit");
-
-const reducer = (state, { type , payload}) => {
-    switch(type){
-        case 'ADD_COUNT' : return {
-            ...state,
-            counter : state.counter + payload
-        };
-
-        case 'SUB_ONE' : return {
-            ...state,
-            counter : state.counter - payload
-        };
-
-        case 'ADD_TODO' : return {
-            ...state,
-            todos : [ ...state.todos , { ...payload } ]
-        };
-
-        default : return {
-            ...state
-        }
-    }
-}
+const { configureStore } = pkg;
 
 // class Store {
 //     constructor(reducerFn, InitialState){
@@ -41,7 +20,6 @@ const reducer = (state, { type , payload}) => {
 //     }
 // }
 
-
 const InitialState = {
     counter : 0,
     todos: []
@@ -51,14 +29,14 @@ const store = configureStore( {reducer , preloadedState : InitialState});
 
 console.log(store.getState());
 
-store.dispatch({ type : 'ADD_COUNT', payload : 2});
+store.dispatch(addCount(2));
 
 console.log(store.getState());
 
-store.dispatch({ type : 'SUB_ONE', payload : 1});
+store.dispatch(subOne(1));
 
 console.log(store.getState());
 
-store.dispatch({ type : 'ADD_TODO', payload : { id : 1, title : 'Learn Redux', status : false }});
+store.dispatch(addTodo({ id : 1, title : 'Learn Redux', status : false }));
 
 console.log(store.getState());
