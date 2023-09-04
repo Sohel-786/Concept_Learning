@@ -1,22 +1,21 @@
 import './App.css'
-import { useSelector, useDispatch } from 'react-redux'
-import { addCount } from './Redux/actions';
+import Counter from './components/Counter';
+import { Link, Route, Routes } from 'react-router-dom';
+import Todos from './components/Todos';
 
 function App() {
-
-  const counter = useSelector((store) => {
-    return store.counter;
-  })
-
-  const dispatch = useDispatch();
-
   return (
-    <>
-        <h1>Count : {counter}</h1>
-        <button onClick={ () => {
-          dispatch(addCount(1))
-        }}>ADD</button>
-    </>
+    <div>
+        <nav>
+          <Link to={'/counter'}><button>Counter</button></Link>
+          <Link to={'/todos'}><button>Todos</button></Link>
+        </nav> 
+      <Routes>
+          <Route path='/' element ={<h1>Welcome</h1>}></Route>
+          <Route path='/counter' element={<Counter />} />
+          <Route path='/todos' element={ <Todos />}/>
+      </Routes>
+    </div>
   )
 }
 
