@@ -23,3 +23,6 @@ const InitialState = {
 
 export const store = configureStore( {reducer , preloadedState : InitialState});
 
+store.subscribe(() => {
+    console.log('changes occured');
+})
