@@ -11,9 +11,10 @@ function Todos(){
 
     return(
         <>
-                  <form onSubmit={() =>{
-                dispatch(addTodo({id:nanoid() , title : text}));
-            }}>
+                  <form onSubmit={(e) =>{
+                         e.preventDefault();
+                         dispatch(addTodo({id:nanoid() , title : text}));
+                    }}>
                 <input onChange={(e) =>{
 
                     setText(e.target.value);
