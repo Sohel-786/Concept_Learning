@@ -1,4 +1,4 @@
-import { ADD_COUNT, ADD_TODO, SUB_ONE, UPDATE_TODO } from './actionTypes.js'
+import { ADD_COUNT, ADD_TODO, SUB_ONE, UPDATE_TODO, ADD_TODO_ERROR, ADD_TODO_LOADING, ADD_TODO_SUCCESS } from './actionTypes.js'
 
 const addCount = (data) => {
     return { type : ADD_COUNT, payload : data };
@@ -16,9 +16,24 @@ const updateTodo = (id) => {
     return { type : UPDATE_TODO, payload : id };
 }
 
+const addTodoLoading = () => {
+    return { type : ADD_TODO_LOADING }
+}
+
+const addTodoError = (err) => {
+    return { type : ADD_TODO_ERROR, payload : err};
+}
+
+const addTodoSuccess = () => {
+    return { type : ADD_TODO_SUCCESS }
+}
+
 export {
     addCount,
     subOne,
     addTodo,
-    updateTodo
+    updateTodo,
+    addTodoError,
+    addTodoLoading,
+    addTodoSuccess
 }

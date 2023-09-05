@@ -32,6 +32,31 @@ export const reducer = (state, { type, payload }) => {
       }
       UpdateTodo(payload);
 
+    case "ADD_TODO_LOADING" : return {
+        ...state,
+        todos : {
+            ...state.todos,
+            IsLoading : true
+        }
+    };
+
+    case "ADD_TODO_SUCCESS" : return {
+        ...state,
+        todos : {
+            ...state.todos,
+            IsLoading : false
+        }
+    };
+
+    case "ADD_TODO_ERROR" : return {
+        ...state,
+        todos : {
+            ...state.todos,
+            IsLoading : false,
+            IsError : true
+        }
+    };
+
     default:
       return {
         ...state,

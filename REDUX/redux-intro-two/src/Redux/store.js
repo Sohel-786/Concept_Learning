@@ -18,7 +18,11 @@ import { reducer } from './reducer';
 
 const InitialState = {
     counter : 0,
-    todos: []
+    todos: {
+        IsLoading : false,
+        IsError : false,
+        data : []
+    }
 }
 
 export const store = configureStore( {reducer , preloadedState : InitialState});
