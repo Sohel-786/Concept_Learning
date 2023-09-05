@@ -42,6 +42,7 @@ function Todos() {
       });
 
       dispatch(addTodoSuccess(ADD_TODO_SUCCESS));
+      setText('')
     } catch (err) {
       dispatch(addTodoError(ADD_TODO_ERROR));
     }
@@ -51,7 +52,7 @@ function Todos() {
     <>
       <form
         className="w-7/12 flex flex-col justify-center items-center"
-        onSubmit={handleAddTodo(e)}
+        onSubmit={handleAddTodo}
       >
         <input
           className="px-4 py-3 w-2/3 border-b-2 border-blue-600 focus:outline-none"

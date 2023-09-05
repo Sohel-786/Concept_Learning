@@ -1,5 +1,16 @@
 {
-    "todos" : [
-        
-    ]
+  "todos": [
+    {
+      "uid": "5HOifyi9uVSxUsgZCwbBh",
+      "title": "Learn React",
+      "status": false,
+      "id": 1
+    },
+    {
+      "uid": "WEMlbAe5YvuM4M7Xg1Oha",
+      "title": "Learn Vue",
+      "status": false,
+      "id": 2
+    }
+  ]
 }
