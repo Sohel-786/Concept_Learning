@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { reducer } from './reducer';
+import { todosReducer } from './Todos/reducer';
 
 // class Store {
 //     constructor(reducerFn, InitialState){
@@ -25,7 +25,7 @@ const InitialState = {
     }
 }
 
-export const store = configureStore( {reducer , preloadedState : InitialState});
+export const store = configureStore( {reducer :todosReducer , preloadedState : InitialState});
 
 store.subscribe(() => {
     console.log('changes occured');

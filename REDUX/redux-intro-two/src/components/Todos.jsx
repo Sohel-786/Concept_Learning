@@ -8,14 +8,14 @@ import {
   getTodoLoading,
   getTodoSuccess,
   updateTodo,
-} from "../Redux/actions";
+} from "../Redux/Todos/actions";
 import { nanoid } from "nanoid";
 import Button from "./Button";
 import {
   ADD_TODO_ERROR,
   ADD_TODO_LOADING,
   ADD_TODO_SUCCESS,
-} from "../Redux/actionTypes";
+} from "../Redux/Todos/actionTypes";
 import axios from "axios";
 
 function Todos() {
@@ -61,6 +61,7 @@ function Todos() {
 
       dispatch(addTodoSuccess(ADD_TODO_SUCCESS));
       setText('')
+      getTodos();
     } catch (err) {
       dispatch(addTodoError(ADD_TODO_ERROR));
     }
@@ -88,7 +89,7 @@ function Todos() {
         ? "Loading..."
         : IsError
         ? "Some Error Occurred"
-        : todos.map((el) => {
+        : <div className="w-full flex justify-center items-center gap-5 flex-wrap py-6">{todos.map((el) => {
             return (
               <div
                 key={el.id}
@@ -107,9 +108,9 @@ function Todos() {
                   }
                   text={"Update Status"}
                 />
-              </div>
-            );
-          })}
+              </div>)
+            })}</div>
+        }
     </>
   );
 }
