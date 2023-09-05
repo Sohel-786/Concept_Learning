@@ -44,8 +44,17 @@ function Todos() {
     }
   }
 
-  function handleStatus(id) {
-    dispatch(updateTodo(id));
+  // add actions for the status update
+
+ async function handleStatus(id, status) {
+        // dispatch(addTodoLoading(ADD_TODO_LOADING));
+        try{
+           await axios.patch(`http://localhost:3001/todos/${id}`, { status : !status })
+           const res = await axios.get('http://localhost:3001/todos');
+           dispatch(getTodoSuccess(res.data));
+        }catch(err){
+            console.log('Error Occured')
+        }   
   }
 
   async function handleAddTodo(e) {
@@ -99,7 +108,7 @@ function Todos() {
                 <p>Status:{el.status ? "Completed" : "Pending"}</p>
                 <Button
                   onClick={() => {
-                    handleStatus(el.id);
+                    handleStatus(el.id, el.status);
                   }}
                   className={
                     el.status
