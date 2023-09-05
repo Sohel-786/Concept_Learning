@@ -1,6 +1,6 @@
-// import { configureStore } from '@reduxjs/toolkit'
 import { configureStore } from '@reduxjs/toolkit'
 import { reducer } from './reducer';
+
 
 // class Store {
 //     constructor(reducerFn, InitialState){
