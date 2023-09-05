@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../Redux/actions";
+import { addTodo, updateTodo } from "../Redux/actions";
 import { nanoid } from "nanoid";
 import Button from "./Button";
 
@@ -8,6 +8,10 @@ function Todos() {
   const [text, setText] = useState("");
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
+
+  function handleStatus(id){
+        dispatch(updateTodo(id));
+  }
 
   return (
     <>
@@ -39,6 +43,11 @@ function Todos() {
             <h3>{el.title}</h3>
             <p>Status:{el.status ? "Completed" : "Pending"}</p>
             <Button
+
+              onClick={() =>{
+                handleStatus(el.id);
+              }}
+
               className={
                 el.status
                   ? "text-white px-4 py-3 text-base bg-red-600 border-2 hover:border-white font-sans font-semibold hover:font-bold"
