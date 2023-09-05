@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { addTodo, updateTodo } from "../Redux/actions";
 import { nanoid } from "nanoid";
 import Button from "./Button";
 
 function Todos() {
   const [text, setText] = useState("");
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state.todos, shallowEqual);
   const dispatch = useDispatch();
 
   function handleStatus(id){
