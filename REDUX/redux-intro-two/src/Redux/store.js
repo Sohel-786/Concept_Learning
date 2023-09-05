@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { todosReducer } from './Todos/reducer';
+import { authReducer } from './Auth/reducer';
 
 // class Store {
 //     constructor(reducerFn, InitialState){
