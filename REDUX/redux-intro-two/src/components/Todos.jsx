@@ -86,14 +86,14 @@ function Todos() {
       </form>
 
       {IsLoading
-        ? "Loading..."
+        ? <div className="flex"> Loading...<div className="w-9 h-9 bg-gray-500 animate-spin"></div></div>
         : IsError
         ? "Some Error Occurred"
         : <div className="w-full flex justify-center items-center gap-5 flex-wrap py-6">{todos.map((el) => {
             return (
               <div
                 key={el.id}
-                className="w-3/12 text-xl shadow-md shadow-green-700 border-2 border-transparent px-8 py-9 gap-4 flex flex-col justify-center items-center bg-slate-600 text-white font-mono rounded-xl hover:border-white"
+                className="md:w-3/12 text-xl shadow-md shadow-green-700 border-2 border-transparent px-8 py-9 gap-4 flex flex-col justify-center items-center bg-slate-600 text-white font-mono rounded-xl hover:border-white"
               >
                 <h3>{el.title}</h3>
                 <p>Status:{el.status ? "Completed" : "Pending"}</p>
