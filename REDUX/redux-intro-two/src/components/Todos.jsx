@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import {
-  addTodo,
   addTodoError,
   addTodoLoading,
   addTodoSuccess,
+  getTodoError,
+  getTodoLoading,
+  getTodoSuccess,
   updateTodo,
 } from "../Redux/actions";
 import { nanoid } from "nanoid";
@@ -22,9 +24,25 @@ function Todos() {
     data: todos,
     IsLoading,
     IsError,
-  } = useSelector((state) => state.todos, shallowEqual);
+  } = useSelector((state) => state.todos);
 
   const dispatch = useDispatch();
+
+  useEffect(() =>{
+    getTodos();
+  }, [])
+
+  async function getTodos(){
+    dispatch(getTodoLoading());
+    try {
+        
+        const res = await axios.get('http://localhost:3001/todos');
+        dispatch(getTodoSuccess(res.data));
+
+    } catch (err) {
+        dispatch(getTodoError())
+    }
+  }
 
   function handleStatus(id) {
     dispatch(updateTodo(id));

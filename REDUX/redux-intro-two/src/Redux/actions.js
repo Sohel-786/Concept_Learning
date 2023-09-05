@@ -1,4 +1,4 @@
-import { ADD_COUNT, ADD_TODO, SUB_ONE, UPDATE_TODO, ADD_TODO_ERROR, ADD_TODO_LOADING, ADD_TODO_SUCCESS } from './actionTypes.js'
+import { ADD_COUNT, ADD_TODO, SUB_ONE, UPDATE_TODO, ADD_TODO_ERROR, ADD_TODO_LOADING, ADD_TODO_SUCCESS, GET_TODO_LOADING, GET_TODO_ERROR, GET_TODO_SUCCESS } from './actionTypes.js'
 
 const addCount = (data) => {
     return { type : ADD_COUNT, payload : data };
@@ -28,6 +28,19 @@ const addTodoSuccess = () => {
     return { type : ADD_TODO_SUCCESS }
 }
 
+
+const getTodoLoading = () => {
+    return { type : GET_TODO_LOADING }
+}
+
+const getTodoError = (err) => {
+    return { type : GET_TODO_ERROR, payload : err};
+}
+
+const getTodoSuccess = (data) => {
+    return { type : GET_TODO_SUCCESS, payload : data }
+}
+
 export {
     addCount,
     subOne,
@@ -35,5 +48,8 @@ export {
     updateTodo,
     addTodoError,
     addTodoLoading,
-    addTodoSuccess
+    addTodoSuccess,
+    getTodoLoading,
+    getTodoError,
+    getTodoSuccess
 }

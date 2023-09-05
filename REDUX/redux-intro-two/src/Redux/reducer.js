@@ -1,3 +1,5 @@
+import { GET_TODO_ERROR, GET_TODO_LOADING, GET_TODO_SUCCESS } from "./actionTypes";
+
 export const reducer = (state, { type, payload }) => {
   switch (type) {
     case "ADD_COUNT":
@@ -53,6 +55,31 @@ export const reducer = (state, { type, payload }) => {
         todos : {
             ...state.todos,
             IsLoading : false,
+            IsError : true
+        }
+    };
+
+    case GET_TODO_LOADING : return {
+        ...state,
+        todos : {
+            ...state.todos,
+            IsLoading : true
+        }
+    };
+
+    case GET_TODO_SUCCESS : return {
+        ...state,
+        todos : {
+            ...state.todos,
+            IsLoading : false,
+            data : [...payload]
+        }
+    };
+
+    case GET_TODO_ERROR : return {
+        ...state,
+        todos : {
+            ...state.todos,
             IsError : true
         }
     };
