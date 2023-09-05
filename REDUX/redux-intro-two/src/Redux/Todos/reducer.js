@@ -1,6 +1,15 @@
 import { GET_TODO_ERROR, GET_TODO_LOADING, GET_TODO_SUCCESS } from "./actionTypes";
 
-export const todosReducer = (state, { type, payload }) => {
+const InitialState = {
+  counter : 0,
+  todos: {
+      IsLoading : false,
+      IsError : false,
+      data : []
+  }
+}
+
+export const todosReducer = (state = InitialState, { type, payload }) => {
   switch (type) {
     case "ADD_COUNT":
       return {

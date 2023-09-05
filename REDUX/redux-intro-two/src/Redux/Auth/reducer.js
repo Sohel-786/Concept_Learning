@@ -6,7 +6,7 @@ const InitialState = {
     token : ''
 }
 
-export const authReducer = (state , { type , payload }) => {
+export const authReducer = (state = InitialState , { type , payload }) => {
     switch(type){
         case LOGIN_LOADING : return {
             ...state,

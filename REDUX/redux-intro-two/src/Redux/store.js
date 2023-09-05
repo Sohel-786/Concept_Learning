@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers } from 'redux'
 import { todosReducer } from './Todos/reducer';
 import { authReducer } from './Auth/reducer';
 
@@ -17,17 +18,17 @@ import { authReducer } from './Auth/reducer';
 //     }
 // }
 
-const InitialState = {
-    counter : 0,
-    todos: {
-        IsLoading : false,
-        IsError : false,
-        data : []
-    }
-}
-
-export const store = configureStore( {reducer :todosReducer , preloadedState : InitialState});
-
-store.subscribe(() => {
-    console.log('changes occured');
+const rootReducer = combineReducers({
+    auth : authReducer,
+    todos : todosReducer
 })
+
+
+
+export const store = configureStore( {reducer : rootReducer});
+
+console.log(store.getState());
+
+// store.subscribe(() => {
+//     console.log('changes occured');
+// })

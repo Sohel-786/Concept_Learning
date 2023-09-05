@@ -24,7 +24,7 @@ function Todos() {
     data: todos,
     IsLoading,
     IsError,
-  } = useSelector((state) => state.todos);
+  } = useSelector((state) => state.todos.todos);
 
   const dispatch = useDispatch();
 
