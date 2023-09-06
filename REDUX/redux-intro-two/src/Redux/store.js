@@ -24,12 +24,12 @@ const rootReducer = combineReducers({
 })
 
 const middleware = (store) => (next) => (actions) => {
-    console.log('actions middleware one' , actions);
+    console.log(actions, store);
     return next(actions)
 }
 
 const middleware2 = (store) => (next) => (actions) => {
-    console.log('actions middleware 2' , actions);
+    // console.log('actions middleware 2' , actions);
     return next(actions)
 }
 
@@ -38,7 +38,6 @@ export const store = configureStore( {reducer : {
     todos : todosReducer
 } , middleware : [middleware, middleware2]});
 
-console.log(store.getState());
 
 // store.subscribe(() => {
 //     console.log('changes occured');
