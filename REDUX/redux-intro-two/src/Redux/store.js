@@ -23,9 +23,20 @@ const rootReducer = combineReducers({
     todos : todosReducer
 })
 
+const middleware = (store) => (next) => (actions) => {
+    console.log('actions middleware one' , actions);
+    return next(actions)
+}
 
+const middleware2 = (store) => (next) => (actions) => {
+    console.log('actions middleware 2' , actions);
+    return next(actions)
+}
 
-export const store = configureStore( {reducer : rootReducer});
+export const store = configureStore( {reducer : {
+    auth : authReducer,
+    todos : todosReducer
+} , middleware : [middleware, middleware2]});
 
 console.log(store.getState());
 
