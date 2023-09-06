@@ -46,6 +46,7 @@ function Todos() {
   // add actions for the status update
 
  async function handleStatus(id, status) {
+        console.log(event)
         dispatch(updateTodoLoading());
         try{
 
