@@ -1,11 +1,13 @@
-import { GET_TODO_ERROR, GET_TODO_LOADING, GET_TODO_SUCCESS } from "./actionTypes";
+import { GET_TODO_ERROR, GET_TODO_LOADING, GET_TODO_SUCCESS, UPDATE_TODO_ERROR, UPDATE_TODO_LOADING, UPDATE_TODO_SUCCESS } from "./actionTypes";
 
 const InitialState = {
   counter : 0,
   todos: {
       IsLoading : false,
       IsError : false,
-      data : []
+      data : [],
+      IsUpdating : false,
+      IsErrorUpdating : false
   }
 }
 
@@ -28,20 +30,6 @@ export const todosReducer = (state = InitialState, { type, payload }) => {
         ...state,
         todos: [...state.todos, { ...payload }],
       };
-
-    case "UPDATE_TODO":
-      function UpdateTodo(id) {
-        console.log(id);
-        state.todos.forEach((el) => {
-            if(el.id === id){
-               el.status =  el.status ? false : true;
-            }
-        })
-        return {
-          ...state,
-        };
-      }
-      UpdateTodo(payload);
 
     case "ADD_TODO_LOADING" : return {
         ...state,
@@ -93,6 +81,31 @@ export const todosReducer = (state = InitialState, { type, payload }) => {
             IsLoading : false
         }
     };
+
+    case UPDATE_TODO_LOADING : return {
+      ...state,
+      todos :{
+        ...state.todos,
+        IsUpdating : true
+      }
+    }
+
+    case UPDATE_TODO_SUCCESS : return {
+      ...state,
+      todos :{
+        ...state.todos,
+        IsUpdating : false
+      }
+    }
+
+    case UPDATE_TODO_ERROR : return  {
+      ...state,
+      todos :{
+        ...state.todos,
+        IsUpdating : false,
+        IsErrorUpdating : true
+      }
+    }
 
     default:
       return {

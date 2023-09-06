@@ -7,15 +7,12 @@ import {
   getTodoError,
   getTodoLoading,
   getTodoSuccess,
-  updateTodo,
+  updateTodoError,
+  updateTodoLoading,
+  updateTodoSuccess,
 } from "../Redux/Todos/actions";
 import { nanoid } from "nanoid";
 import Button from "./Button";
-import {
-  ADD_TODO_ERROR,
-  ADD_TODO_LOADING,
-  ADD_TODO_SUCCESS,
-} from "../Redux/Todos/actionTypes";
 import axios from "axios";
 
 function Todos() {
@@ -24,6 +21,8 @@ function Todos() {
     data: todos,
     IsLoading,
     IsError,
+    IsUpdating,
+    IsErrorUpdating
   } = useSelector((state) => state.todos.todos);
 
   const dispatch = useDispatch();
@@ -47,19 +46,22 @@ function Todos() {
   // add actions for the status update
 
  async function handleStatus(id, status) {
-        // dispatch(addTodoLoading(ADD_TODO_LOADING));
+        dispatch(updateTodoLoading());
         try{
+
            await axios.patch(`http://localhost:3001/todos/${id}`, { status : !status })
            const res = await axios.get('http://localhost:3001/todos');
+           dispatch(updateTodoSuccess());
            dispatch(getTodoSuccess(res.data));
+
         }catch(err){
-            console.log('Error Occured')
+            dispatch(updateTodoError());
         }   
   }
 
   async function handleAddTodo(e) {
     e.preventDefault();
-    dispatch(addTodoLoading(ADD_TODO_LOADING));
+    dispatch(addTodoLoading());
 
     try {
       await axios.post("http://localhost:3001/todos", {
@@ -68,11 +70,11 @@ function Todos() {
         status: false,
       });
 
-      dispatch(addTodoSuccess(ADD_TODO_SUCCESS));
+      dispatch(addTodoSuccess());
       setText('')
       getTodos();
     } catch (err) {
-      dispatch(addTodoError(ADD_TODO_ERROR));
+      dispatch(addTodoError());
     }
   }
 
@@ -111,11 +113,13 @@ function Todos() {
                     handleStatus(el.id, el.status);
                   }}
                   className={
-                    el.status
+                    IsUpdating
+                    ? 'text-white px-4 py-3 text-base bg-blue-500 border-2 border-white font-sans font-semibold hover:font-bold flex justify-center items-center'
+                    :el.status
                       ? "text-white px-4 py-3 text-base bg-red-600 border-2 hover:border-white font-sans font-semibold hover:font-bold"
                       : "bg-green-500 text-white px-4 py-3 text-base border-2 hover:border-white font-sans font-semibold hover:font-bold"
                   }
-                  text={"Update Status"}
+                  text={ IsUpdating ? <>Loading...<div className="w-4 h-4 bg-white animate-spin"></div></>  : "Update Status"}
                 />
               </div>)
             })}</div>
