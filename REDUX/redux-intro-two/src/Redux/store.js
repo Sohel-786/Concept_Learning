@@ -34,7 +34,8 @@ export const store = configureStore({
   reducer: {
     auth: authReducer,
     todos: todosReducer,
-  }
+  },
+  
 });
 
 // store.subscribe(() => {

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { ADD_COUNT, ADD_TODO, SUB_ONE, ADD_TODO_ERROR, ADD_TODO_LOADING, ADD_TODO_SUCCESS, GET_TODO_LOADING, GET_TODO_ERROR, GET_TODO_SUCCESS, UPDATE_TODO_LOADING, UPDATE_TODO_SUCCESS, UPDATE_TODO_ERROR } from './actionTypes.js'
+import { nanoid } from 'nanoid';
 
 const addCount = (data) => {
     return { type : ADD_COUNT, payload : data };
@@ -62,6 +63,37 @@ const getTodoAction = () => async (dispatch) => {
     }
   }
 
+const handleTodostatusAction = (id,status) => async (dispatch) => {
+    dispatch(updateTodoLoading());
+    try{
+
+       await axios.patch(`http://localhost:3001/todos/${id}`, { status : !status })
+       const res = await axios.get('http://localhost:3001/todos');
+       dispatch(updateTodoSuccess());
+       dispatch(getTodoSuccess(res.data));
+
+    }catch(err){
+        dispatch(updateTodoError());
+    }   
+}
+
+const addTodoAction = (text) => async (dispatch) => {
+    dispatch(addTodoLoading());
+
+    try {
+      await axios.post("http://localhost:3001/todos", {
+        uid: nanoid(),
+        title: text,
+        status: false,
+      });
+
+      dispatch(addTodoSuccess());
+      dispatch(getTodoAction());
+    } catch (err) {
+      dispatch(addTodoError());
+    }
+}
+
 export {
     addCount,
     subOne,
@@ -75,5 +107,7 @@ export {
     updateTodoError,
     updateTodoLoading,
     updateTodoSuccess,
-    getTodoAction
+    getTodoAction,
+    handleTodostatusAction,
+    addTodoAction
 }

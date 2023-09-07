@@ -1,18 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addTodoError,
-  addTodoLoading,
-  addTodoSuccess,
+  addTodoAction,
   getTodoAction,
-  getTodoSuccess,
-  updateTodoError,
-  updateTodoLoading,
-  updateTodoSuccess,
+  handleTodostatusAction,
 } from "../Redux/Todos/actions";
-import { nanoid } from "nanoid";
 import Button from "./Button";
-import axios from "axios";
 
 function Todos() {
   const [text, setText] = useState("");
@@ -27,47 +20,36 @@ function Todos() {
   const dispatch = useDispatch();
 
   useEffect(() =>{
-    getTodos();
+    dispatch(getTodoAction());
   }, [])
 
 
- async function getTodos(){
-      dispatch(getTodoAction());
-  }
+//  async function getTodos(){
+//       dispatch(getTodoAction());
+//   }
 
   // add actions for the status update
 
  async function handleStatus(id, status) {
-        dispatch(updateTodoLoading());
-        try{
+        // dispatch(updateTodoLoading());
+        // try{
 
-           await axios.patch(`http://localhost:3001/todos/${id}`, { status : !status })
-           const res = await axios.get('http://localhost:3001/todos');
-           dispatch(updateTodoSuccess());
-           dispatch(getTodoSuccess(res.data));
+        //    await axios.patch(`http://localhost:3001/todos/${id}`, { status : !status })
+        //    const res = await axios.get('http://localhost:3001/todos');
+        //    dispatch(updateTodoSuccess());
+        //    dispatch(getTodoSuccess(res.data));
 
-        }catch(err){
-            dispatch(updateTodoError());
-        }   
+        // }catch(err){
+        //     dispatch(updateTodoError());
+        // }   
+
+        dispatch(handleTodostatusAction(id,status));
   }
 
   async function handleAddTodo(e) {
     e.preventDefault();
-    dispatch(addTodoLoading());
-
-    try {
-      await axios.post("http://localhost:3001/todos", {
-        uid: nanoid(),
-        title: text,
-        status: false,
-      });
-
-      dispatch(addTodoSuccess());
-      setText('')
-      getTodos();
-    } catch (err) {
-      dispatch(addTodoError());
-    }
+    dispatch(addTodoAction(text));
+    setText('')
   }
 
   return (
