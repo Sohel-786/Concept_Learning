@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ADD_COUNT, ADD_TODO, SUB_ONE, ADD_TODO_ERROR, ADD_TODO_LOADING, ADD_TODO_SUCCESS, GET_TODO_LOADING, GET_TODO_ERROR, GET_TODO_SUCCESS, UPDATE_TODO_LOADING, UPDATE_TODO_SUCCESS, UPDATE_TODO_ERROR } from './actionTypes.js'
 
 const addCount = (data) => {
@@ -49,6 +50,18 @@ const updateTodoError = () => {
     return { type : UPDATE_TODO_ERROR }
 }
 
+const getTodoAction = () => async (dispatch) => {
+    dispatch(getTodoLoading());
+    try {
+        
+        const res = await axios.get('http://localhost:3001/todos');
+        dispatch(getTodoSuccess(res.data));
+
+    } catch (err) {
+        dispatch(getTodoError())
+    }
+  }
+
 export {
     addCount,
     subOne,
@@ -61,5 +74,6 @@ export {
     getTodoSuccess,
     updateTodoError,
     updateTodoLoading,
-    updateTodoSuccess
+    updateTodoSuccess,
+    getTodoAction
 }

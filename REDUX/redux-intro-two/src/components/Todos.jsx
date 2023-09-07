@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addTodoError,
   addTodoLoading,
   addTodoSuccess,
-  getTodoError,
-  getTodoLoading,
+  getTodoAction,
   getTodoSuccess,
   updateTodoError,
   updateTodoLoading,
@@ -31,16 +30,9 @@ function Todos() {
     getTodos();
   }, [])
 
-  async function getTodos(){
-    dispatch(getTodoLoading());
-    try {
-        
-        const res = await axios.get('http://localhost:3001/todos');
-        dispatch(getTodoSuccess(res.data));
 
-    } catch (err) {
-        dispatch(getTodoError())
-    }
+ async function getTodos(){
+      dispatch(getTodoAction());
   }
 
   // add actions for the status update
