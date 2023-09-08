@@ -5,11 +5,7 @@ function App() {
   return (
     <div >
         <Button >Click</Button>
-        <Work style={
-        
-        }{
-          
-        } />
+        <Work color='primary' />
     </div>
   );
 }
