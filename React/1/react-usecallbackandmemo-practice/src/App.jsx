@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
+import { nanoid } from "nanoid";
+import Title from "./components/Title";
 
 function App() {
   const [list, setList] = useState([]);
   const [data, setData] = useState({});
+  const [text, setText] = useState('');
+  const [todoList, setTodolist] = useState([]);
 
   useEffect(() => {
     getTodo();
@@ -44,6 +48,10 @@ function App() {
     })
   }
 
+  function handleToggle(id){
+
+  }
+
   return (
     <>
       <div>
@@ -67,6 +75,23 @@ function App() {
           }} onClick={handleSubmit}>Submit</button>
         </div>
         <Card list={list} />
+
+        <div>
+          <input type="text" placeholder="Enter Title" onChange={(e) =>{
+              setText(e.target.value);
+          }} />
+          <button onClick={() =>{
+              setTodolist([...todoList, {title : text, status : false, id : nanoid(4)}]);
+          }}>Submit</button>
+        </div>
+
+        <div>
+          {
+            todoList.map((el) => {
+              return  <Title el={el} key={el.id} handleToggle={handleToggle}/>
+            })
+          }
+        </div>
       </div>
     </>
   );
