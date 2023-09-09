@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 function Card({ list }){
-    console.log('sohel')
+    console.log('sohel');
     return (
         <div style={{
             display : 'flex',
