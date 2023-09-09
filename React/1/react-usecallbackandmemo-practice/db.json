@@ -1,0 +1,20 @@
+{
+    "users" : [
+        {
+            "first_name" : "Sohel",
+            "last_name" : "Shaikh",
+            "role" : "Software Engineer"
+        },
+        {
+            "first_name" : "Jubair",
+            "last_name" : "Khilji",
+            "role" : "Production Engineer"
+        },
+        {
+            "first_name" : "Abdul Majid",
+            "last_name" : "Pathan",
+            "role" : "Material Expert"
+        }
+   
+    ]
+}
