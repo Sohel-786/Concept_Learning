@@ -15,20 +15,14 @@
     {
       "first_name": "Abdul Majid",
       "last_name": "Pathan",
-      "role": "Material Expert",
+      "role": "Engineer",
       "id": 3
     },
     {
-      "first_name": "Shanavaz",
-      "last_name": "Malek ",
-      "role": "Software Engineer",
+      "first_name": "Sana",
+      "last_name": "Shaik",
+      "role": "sfdfds",
       "id": 4
-    },
-    {
-      "first_name": "f",
-      "last_name": "f",
-      "role": "fgdf",
-      "id": 5
     }
   ]
 }

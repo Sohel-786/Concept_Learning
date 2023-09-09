@@ -37,7 +37,7 @@ function App() {
       }
     }).then((d) => {
         
-        getTodo()
+        setList([...list, {...data} ])
 
     }).catch((e) =>{
       console.log(e.message)
