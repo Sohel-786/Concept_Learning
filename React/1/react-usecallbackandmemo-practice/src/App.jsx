@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import { nanoid } from "nanoid";
@@ -48,9 +48,16 @@ function App() {
     })
   }
 
-  function handleToggle(id){
-
-  }
+  const handleToggle = useCallback((id) =>{
+    console.log('done')
+      todoList.forEach((el) => {
+        console.log(el);
+        if(id === el.id){
+          console.log(el);
+          setTodolist([...todoList, {...el, status : !el.status} ])
+        }
+      })
+  }, []);
 
   return (
     <>
