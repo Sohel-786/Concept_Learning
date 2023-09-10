@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import { nanoid } from "nanoid";
@@ -9,6 +9,13 @@ function App() {
   const [data, setData] = useState({});
   const [text, setText] = useState('');
   const [todoList, setTodolist] = useState([]);
+  const [n, setN] = useState(30);
+
+  function square(n){
+    return n*n;
+  }
+
+  const memoizefn = useMemo(() => square(n), [n])
 
   useEffect(() => {
     getTodo();
@@ -98,6 +105,21 @@ function App() {
               return  <Title el={el} key={el.id} handleToggle={handleToggle}/>
             })
           }
+        </div>
+
+        <div>
+            <button onClick={() =>{
+              console.time('G');
+              console.log(memoizefn);
+              console.timeEnd('G');;
+            }}>Calculate</button>
+
+            <button onClick={() =>{
+              setN(34)
+            }}>Square 34</button>
+            <button onClick={() =>{
+              setN(38)
+            }}>Square 38</button>
         </div>
       </div>
     </>
