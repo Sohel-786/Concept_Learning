@@ -28,3 +28,4 @@ function Card({ list }){
 }
 
 export default memo(Card);
+// export default Card;

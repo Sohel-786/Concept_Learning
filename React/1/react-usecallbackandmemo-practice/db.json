@@ -23,6 +23,12 @@
       "last_name": "Shaik",
       "role": "sfdfds",
       "id": 4
+    },
+    {
+      "first_name": "Abdul Majid",
+      "last_name": "Pathan",
+      "role": "Engineer",
+      "id": 5
     }
   ]
 }

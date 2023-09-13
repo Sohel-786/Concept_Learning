@@ -12,6 +12,7 @@ function App() {
   const [n, setN] = useState(30);
 
   function square(n){
+    console.log('running the function')
     return n*n;
   }
 
