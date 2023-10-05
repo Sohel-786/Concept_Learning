@@ -5,6 +5,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import "./App.css";
 import { SiGit, SiHtml5 } from 'react-icons/si'
+import Menu from "./components/Menu";
 
 function App() {
   return (
@@ -107,6 +108,8 @@ function App() {
           icon={<SiGit />}
         />
       </VerticalTimeline>
+
+      <Menu />
     </>
   );
 }
