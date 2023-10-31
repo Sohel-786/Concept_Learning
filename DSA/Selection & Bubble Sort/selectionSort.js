@@ -3,9 +3,9 @@ const arr2 = [2, 5, 12 , 18 , -1, -4, 25, 8, -9, -103, 58, 85]
 
 function selectionSortAsc(arr, n){
     
-    for(i= 0; i<n ; i++){
+    for(let i= 0; i<n ; i++){
         minI = i;
-        for(j = i+1; j<n ; j++){
+        for(let j = i+1; j<n ; j++){
             if( arr[j] < arr[minI]){
                 minI = j;
             }
@@ -22,9 +22,9 @@ function selectionSortAsc(arr, n){
 
 function selectionSortDes(arr, n){
     
-    for(i= 0; i<n ; i++){
+    for(let i= 0; i<n ; i++){
         maxI = i;
-        for(j = i+1; j<n ; j++){
+        for(let j = i+1; j<n ; j++){
             if( arr[j] > arr[maxI]){
                 maxI = j;
             }
