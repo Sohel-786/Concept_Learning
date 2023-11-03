@@ -1,12 +1,14 @@
-import { Button } from "@mui/material";
-import { Work } from "@mui/icons-material";
+import Carousel from "./components/Carousel";
 
 function App() {
   return (
-    <div >
-        <Button >Click</Button>
-        <Work color='primary' />
-    </div>
+    // <div >
+    //     <Button >Click</Button>
+    //     <Work color='primary' />
+    // </div>
+    <>
+      <Carousel />
+    </>
   );
 }
 
