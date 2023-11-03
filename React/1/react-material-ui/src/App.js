@@ -1,4 +1,4 @@
-import Carousel from "./components/Carousel";
+import Slider from "./components/Slider";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
     //     <Work color='primary' />
     // </div>
     <>
-      <Carousel />
+      <Slider />
     </>
   );
 }

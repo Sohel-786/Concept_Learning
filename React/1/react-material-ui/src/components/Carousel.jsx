@@ -92,7 +92,7 @@ function Carousel() {
     <AliceCarousel
       responsive={{
         0: {
-          items: 2.5,
+          items: 3,
         },
       }}
       mouseTracking={true}
