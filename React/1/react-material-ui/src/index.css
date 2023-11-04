@@ -13,3 +13,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.alice-carousel__next-btn{
+  background: white;
+  width: 50px;
+  border: 2px solid blue;
+  position: absolute;
+  right: 50px;
+  top: 150px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alice-carousel__prev-btn{
+  background: white;
+  width: 50px;
+  border: 2px solid blue;
+  position: absolute;
+  left: 50px;
+  top: 150px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

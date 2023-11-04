@@ -100,18 +100,8 @@ function Carousel() {
       disableDotsControls={true}
       animationDuration={200}
       items={items}
+      activeIndex={1}
     />
-    
-    <div style={{
-        width : '100px',
-        height : '100px',
-        backgroundColor : 'red'
-    }} className="alice-carousel__prev-btn alice-carousel__prev-btn-item"></div>
-    <div style={{
-        width : '100px',
-        height : '100px',
-        backgroundColor : 'green'
-    }} className="alice-carousel__next-btn alice-carousel__next-btn-item"></div>
   </>
   )
 
