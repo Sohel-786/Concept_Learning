@@ -25,6 +25,11 @@
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=abe99ee895c9a94800cc957300313970
 
 async function Show() {
+   if(event.key){
+        if(event.key !== "Enter"){
+            return;
+        }
+   }
   try {
     let city = document.querySelector("#city").value;
 
@@ -40,15 +45,34 @@ async function Show() {
   }
 }
 
+async function handleDefault() {
+  try {
+    let city = document.getElementById("city");
+    city.value = "Ahmedabad";
+
+    let res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=abe99ee895c9a94800cc957300313970`
+    );
+    let data = await res.json();
+    console.log(Math.round(data.main.temp - 273.15), data);
+    handleContainer(data);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+handleDefault();
+
 function handleContainer(data) {
   let container = document.getElementById("container");
   container.innerHTML = `<div style="color:blue;text-shadow:2px 2px; font-size:50px;font-weight : bold;">${Math.round(
     data.main.temp - 273.15
   )}<sup>o</sup></div> <div style="display:flex;flex-Direction:column;color: green;"><h1>${
     data.name
-  }</h1><p style="font-weight:bold;font-size:20px;text-transform: capitalize;color:pink;">${data.weather[0].description}</p></div>`;
+  }</h1><p style="font-weight:bold;font-size:20px;text-transform: capitalize;color:pink;">${
+    data.weather[0].description
+  }</p></div>`;
 
-  container.style.padding = '50px';
-  container.style.margin = '50px';
-
+  container.style.padding = "50px";
+  container.style.margin = "50px";
 }
