@@ -5,10 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API</title>
+    <style>
+        #container{
+            display: flex;
+            border: 0.5px solid rgb(91, 91, 91);
+            width: fit-content;
+            border-radius: 10px;
+            gap: 30px;
+
+        }
+
+        body {
+            background-image: url("https://www.un.org/sites/un2.un.org/files/styles/large-article-image-style-16-9/public/field/image/2023/03/52196025795_06f077377a_c.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" id="city" placeholder="Input City Name">
-    <button onclick="Show()">Show Data</button>
+    <input type="text" id="city" placeholder="Input City Name" style="border-radius: 10px; background: rgb(207, 222, 231);padding: 10px; margin: 10px; width: 30%;">
+    <button style="border-radius: 5px; padding: 5px 20px; cursor: pointer;" onclick="Show()">Show Data</button>
+
+    <div id="container">
+
+    </div>
 </body>
 </html>
 
